@@ -1,5 +1,5 @@
 const projects = window.PORTFOLIO_PROJECTS || [];
-const collectionOrder = ["hardware", "data", "architecture", "research"];
+const collectionOrder = ["architecture", "hardware", "data", "research"];
 const collections = [...(window.PORTFOLIO_COLLECTIONS || [])].sort((a, b) => collectionOrder.indexOf(a.id) - collectionOrder.indexOf(b.id));
 const page = document.body.dataset.page;
 
@@ -14,19 +14,6 @@ function projectVisual(project, compact = false) {
 
 function featuredRow(project, position) {
   return `<a class="feature-row row-${position}" href="project.html?slug=${project.slug}"><div class="feature-meta"><span>${project.index} / ${project.categoryLabel}</span><span>${project.period}</span></div><div class="feature-copy"><h3>${project.title}</h3><p>${project.summary}</p></div><div class="feature-visual">${projectVisual(project, true)}</div><span class="row-arrow" aria-hidden="true">↗</span></a>`;
-}
-
-function workRow(project) {
-  return `<a class="work-row" href="project.html?slug=${project.slug}"><span class="work-index">${project.index}</span><div class="work-row-text"><span class="small-label">项目 / ${project.period}</span><h3>${project.title}</h3><p>${project.subtitle}</p></div><div class="work-preview">${projectVisual(project, true)}</div><span class="work-arrow" aria-hidden="true">↗</span></a>`;
-}
-
-function collectionSection(collection) {
-  const known = projects.filter(project => project.category === collection.id);
-  if (collection.id === 'data') {
-    const order = ['eye-care-dashboard', 'auto-backlight-dashboard', 'device-timeline'];
-    known.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
-  }
-  return `<section class="collection-section" id="category-${collection.id}" aria-labelledby="heading-${collection.id}"><div class="collection-heading"><div><span class="small-label">领域 / ${collection.id.toUpperCase()}</span><h2 id="heading-${collection.id}">${collection.label}</h2><p>${collection.description}</p></div><div class="collection-count"><strong>${String(known.length).padStart(2, '0')}</strong><span>件作品</span></div></div><div class="collection-items">${known.map(workRow).join('')}</div></section>`;
 }
 
 function domainLink(collection) {
@@ -71,22 +58,42 @@ function setupNav() {
 
 setupNav();
 if (page === 'home') {
-  const gateway = projects.find(item => item.slug === 'cm5-home-gateway');
-  const eye = projects.find(item => item.slug === 'eye-care-dashboard');
-  const architecture = projects.find(item => item.slug === 'dezhou-exhibition-center');
-  const spatial = projects.find(item => item.slug === 'spatial-storage');
-  document.getElementById('hero-visual').innerHTML = [architecture, gateway, eye, spatial].filter(Boolean).map(item => projectVisual(item, true)).join('');
-  document.getElementById('featured-list').innerHTML = projects.filter(item => item.featured).map(featuredRow).join('');
+  const featured = projects.filter(item => item.featured).sort((a, b) => collectionOrder.indexOf(a.category) - collectionOrder.indexOf(b.category));
+  document.getElementById('featured-list').innerHTML = featured.map(featuredRow).join('');
   document.getElementById('domain-list').innerHTML = collections.map(domainLink).join('');
   window.LIEFLAT_PORTFOLIO?.mountPreviews(document);
 }
 if (page === 'work') {
   const list = document.getElementById('work-list');
+  const detail = document.getElementById('work-detail');
   const filters = [...document.querySelectorAll('.filter')];
+  let selectedSlug = null;
+  const displayOrder = ['dezhou-exhibition-center', 'zhengzhou-exhibition-center', 'longchang-civic-center', 'cm5-home-gateway', 'voice-ui-prototype', 'eye-care-dashboard', 'auto-backlight-dashboard', 'device-timeline', 'spatial-storage'];
+  const ordered = [...projects].sort((a, b) => displayOrder.indexOf(a.slug) - displayOrder.indexOf(b.slug));
+  const detailMarkup = project => `<div class="detail-top"><span>${project.index} / ${String(projects.length).padStart(2, '0')} · ${project.categoryLabel}</span><span>${project.period}</span></div><h2>${project.title}</h2><p class="detail-question">${project.question}</p><div class="detail-media category-${project.category}">${projectVisual(project, true)}</div><p class="detail-summary">${project.summary}</p><a class="detail-cta" href="project.html?slug=${project.slug}">阅读完整案例 <span aria-hidden="true">↗</span></a>`;
+  const select = slug => {
+    const project = projects.find(item => item.slug === slug);
+    if (!project) return;
+    selectedSlug = slug;
+    detail.innerHTML = detailMarkup(project);
+    list.querySelectorAll('.index-row').forEach(row => row.setAttribute('aria-selected', String(row.dataset.slug === slug)));
+    window.LIEFLAT_PORTFOLIO?.mountPreviews(detail);
+  };
   const applyFilter = category => {
-    const visible = category === 'all' ? collections : collections.filter(item => item.id === category);
-    list.innerHTML = visible.map(collectionSection).join('');
-    window.LIEFLAT_PORTFOLIO?.mountPreviews(list);
+    const visible = category === 'all' ? ordered : ordered.filter(item => item.category === category);
+    list.innerHTML = visible.map(project => `<button class="index-row" type="button" data-slug="${project.slug}" aria-selected="false"><span class="index-num">${project.index}</span><span class="index-title">${project.title}<small>${project.subtitle}</small></span><span class="index-category">${project.categoryLabel}</span><span class="index-arrow" aria-hidden="true">↗</span></button>`).join('');
+    list.querySelectorAll('.index-row').forEach(row => {
+      row.addEventListener('click', () => select(row.dataset.slug));
+      row.addEventListener('focus', () => select(row.dataset.slug));
+      row.addEventListener('keydown', event => {
+        if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+        event.preventDefault();
+        const rows = [...list.querySelectorAll('.index-row')];
+        const next = rows[Math.max(0, Math.min(rows.length - 1, rows.indexOf(row) + (event.key === 'ArrowDown' ? 1 : -1)))];
+        next.focus();
+      });
+    });
+    select(visible.some(item => item.slug === selectedSlug) ? selectedSlug : visible[0]?.slug);
     filters.forEach(button => {
       const active = button.dataset.filter === category;
       button.classList.toggle('active', active);

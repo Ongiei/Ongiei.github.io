@@ -2,21 +2,25 @@
 
 ## Direction
 
-作品集采用“跨尺度工作图册”：像翻阅设计工作台上的案例索引，先看到作品，再读过程。页面以浅灰白纸面、深墨绿文字和明亮蓝色标注组成；图片缺失时以明确标注的结构示意代替，不伪装成真实作品。
+**Space → system → interface** is the organizing idea. The site reads as an editorial portfolio with a fast work index and one spatial interlude. It is built for hiring teams who should understand the range and open a case within 10–20 seconds.
 
-## Visual rules
+## Visual language
 
-- 首页主标题、页面主标题和较大的章节标题使用 Baskerville 与宋体组成的衬线字体栈；导航、筛选、项目列表标题及正文使用易读的中文系统无衬线字体。
-- 首页以一件大型作品预览和三件不同尺度的案例片段形成主视觉。
-- 案例列表用横向分隔与不等宽版面，不使用同尺寸卡片网格作为主结构。
-- 作品索引先按领域分组；组内区分可打开的已整理案例和不可打开的待补位置。
-- 蓝色只用于链接、筛选选中状态和关键图形标注；绿色作为主要背景和文字体系。
-- 项目类型拥有不同的展示媒介：建筑方案图册、设备照片与形态图、数据图表、Agent 流程。
-- 建筑案例使用源方案图，按“场地 → 组织 → 体验”编排为图册；尚缺图片的工作流结构示意继续标注“结构示意 · 待替换真实素材”。数据图表面向读者只展示分析问题、单位和指标口径，示例数值统一在看板末尾说明。
-- 护眼、自动背光、设备行为三篇案例直接在作品详情页呈现多章节图表。图表采用单色纸墨体系，每章回答一个具体问题，避免堆叠 KPI 卡片。
+- Mineral paper `#e9eee9`, pale sheet `#f7f9f5`, deep ink `#153930`, secondary ink `#4b665e`, rules `#bbc9c0`, and signal blue `#1557dd`.
+- Baskerville / Songti SC is reserved for the large thesis, page titles, and chapter openings. System sans is used for navigation, case names, descriptions, and controls. Mono is used only for index and coordinate notation.
+- Asymmetric editorial grids and horizontal rules organize content. The work index uses a ledger and an adjacent project reading pane. Equal project cards are avoided.
+- Show the real medium: architectural spreads, physical device images, the embedded data chapters, and digital product screens. Image captions describe the work, not the production process.
 
-## Interaction
+## Motion and interaction
 
-- 作品页按领域筛选，筛选按钮保留可见焦点与选中状态。
-- 项目页用目录快速跳至背景、过程和成果；缺失素材以待补清单收束。
-- 页面响应桌面与手机布局，尊重减少动态效果偏好。
+- The home page has one optional Three.js spatial interlude. Its simple geometry abstracts the radial organization of the Dezhou exhibition centre and transitions to nodes and an interface plane. It is a navigation aid, not a claimed project rendering.
+- All routes, case links, and the work index work without WebGL or script driven animation. The interlude uses a static project image if WebGL is unavailable, on narrow screens, or under reduced motion.
+- Work index filters narrow the ledger; selecting a row updates the adjacent detail pane. A direct case link remains visible. Keyboard focus and selected state are explicit.
+- Same-origin page changes use a short editorial reveal where the browser supports cross-document view transitions; other browsers use normal navigation.
+- Project pages stay calm so drawings and analytical charts can be read without motion. No animated diagrams, pinned case studies, or cursor effects over dense content.
+- Hover reveals emphasis by color and small shifts. Reduced motion removes transitions. Mobile uses a single column with a compact selected project preview.
+
+## Content rules
+
+- Preserve all nine published cases across architecture, hardware, data, and digital product. No unfinished cases or internal production notes appear in public copy.
+- The homepage leads with a clear positioning statement and immediate index access. The case page preserves the existing question, constraints, decisions, media, and inline dashboards.

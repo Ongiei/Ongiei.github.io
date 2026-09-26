@@ -373,7 +373,7 @@
       const cards = def.cards.filter(card => card.chapter === chapter.id);
       return `<section class="dashboard-chapter" id="dash-${chapter.id}" aria-labelledby="dash-heading-${chapter.id}"><div class="dashboard-chapter-head"><div><p class="small-label">${chapter.eyebrow}</p><h3 id="dash-heading-${chapter.id}">${chapter.title}</h3></div><p>${chapter.note}</p></div><div class="lieflat-grid ${cards.length === 1 ? 'single' : ''}">${cards.map(card => chartCard(card, def.cards.indexOf(card))).join('')}</div></section>`;
     }).join('');
-    return `<section class="data-showcase section-shell" aria-label="${project.title}分析看板"><div class="data-showcase-head"><div><p class="small-label">分析看板 / INTERACTIVE STUDY</p><h2>${def.heading}</h2></div><p>${def.intro}</p></div><nav class="dashboard-nav" aria-label="本看板章节">${nav}</nav>${chapters}</section>`;
+    return `<section class="data-showcase section-shell" aria-label="${project.title}分析看板"><div class="data-showcase-head"><div><p class="small-label">分析看板 / CASE STUDY</p><h2>${def.heading}</h2></div><p>${def.intro}</p></div><nav class="dashboard-nav" aria-label="本看板章节">${nav}</nav>${chapters}</section>`;
   }
 
   function preview(project) {
@@ -382,7 +382,7 @@
     const card = def.cards[0];
     const id = `preview-${project.slug}-${++previewCount}`;
     const viewBox = card.id === 'device-lineage' ? '0 0 400 340' : '0 0 400 320';
-    return `<div class="visual lf-preview" role="img" aria-label="${project.title}图表预览"><svg id="${id}" data-lf-slug="${project.slug}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg><span class="visual-caption">数据分析 / 交互原型</span></div>`;
+    return `<div class="visual lf-preview" role="img" aria-label="${project.title}图表预览"><svg id="${id}" data-lf-slug="${project.slug}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg><span class="visual-caption">数据分析 / 看板章节</span></div>`;
   }
 
   function mount(projectSlug) {
