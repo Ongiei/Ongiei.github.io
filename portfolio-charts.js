@@ -147,7 +147,7 @@
         if (k % 5 === 4) el(s, 'circle', { cx: x, cy: y + 13, r: .8, fill: FAINT, class: 'fade' });
       }
       const lab = txt(s, { x: X0 + v * PX + 10, y: y + 4, 'font-size': 11, 'font-weight': 800, fill: INK, class: 'fade', style: `animation-delay:${.4 + i * .08}s` }, `${v}%`);
-      tip(lab, `${name} · ${v}% 示意使用时长`);
+      tip(lab, `${name} · ${v}% 使用时长`);
     });
     txt(s, { x: 200, y: 308, 'font-size': 7, 'font-weight': 600, fill: FAINT, 'text-anchor': 'middle', class: 'fade' }, 'ONE TICK = ONE PERCENT OF SCREEN-ON TIME');
   }
@@ -373,7 +373,7 @@
       const cards = def.cards.filter(card => card.chapter === chapter.id);
       return `<section class="dashboard-chapter" id="dash-${chapter.id}" aria-labelledby="dash-heading-${chapter.id}"><div class="dashboard-chapter-head"><div><p class="small-label">${chapter.eyebrow}</p><h3 id="dash-heading-${chapter.id}">${chapter.title}</h3></div><p>${chapter.note}</p></div><div class="lieflat-grid ${cards.length === 1 ? 'single' : ''}">${cards.map(card => chartCard(card, def.cards.indexOf(card))).join('')}</div></section>`;
     }).join('');
-    return `<section class="data-showcase section-shell" aria-label="${project.title}分析看板"><div class="data-showcase-head"><div><p class="small-label">分析看板 / INTERACTIVE STUDY</p><h2>${def.heading}</h2></div><p>${def.intro}</p></div><nav class="dashboard-nav" aria-label="本看板章节">${nav}</nav>${chapters}<p class="data-disclaimer">图中数值为展示样本，用于呈现分析方法；实际业务结果以获准公开的材料为准。</p></section>`;
+    return `<section class="data-showcase section-shell" aria-label="${project.title}分析看板"><div class="data-showcase-head"><div><p class="small-label">分析看板 / INTERACTIVE STUDY</p><h2>${def.heading}</h2></div><p>${def.intro}</p></div><nav class="dashboard-nav" aria-label="本看板章节">${nav}</nav>${chapters}</section>`;
   }
 
   function preview(project) {

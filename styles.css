@@ -102,3 +102,11 @@ FORM: Editorial field atlas, adapted for a recruiter scanning a mixed-discipline
 :root{--display-serif:"Baskerville","Songti SC","STSong","Noto Serif CJK SC",serif}
 .hero h1,.page-intro h1,.project-head h1,.method-title h2,.closing h2,.about-materials h2,.about-contact h2{font-family:var(--display-serif);font-weight:600;letter-spacing:-.025em;line-height:1.22}
 .section-heading h2,.project-section h2{font-family:var(--display-serif);font-weight:600;letter-spacing:-.02em;line-height:1.25}
+
+/* Keep each selected-work image filled within its frame. */
+.hero-art-main>.visual:nth-child(1){grid-row:auto}
+.hero-art-main>.visual:nth-child(4){display:block}
+.hero-art-main .visual-photo img{object-fit:cover;object-position:center}
+
+.about-contact{margin-top:clamp(80px,10vw,150px)}
+@media(max-width:420px){.hero-art-footer span:nth-child(3),.hero-art-footer span:nth-child(4){display:inline}}
