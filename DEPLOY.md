@@ -1,5 +1,13 @@
 # 上线方案
 
+## 当前发布状态
+
+- 作品集仓库：[Ongiei/Ongiei.github.io](https://github.com/Ongiei/Ongiei.github.io)
+- 公开地址：<https://ongiei.github.io/>
+- GitHub Pages 从 `main` 分支根目录发布；推送新提交后会自动重新部署。
+- 本地编辑不会直接同步到线上。修改完成后，需要在本仓库提交并推送到 `origin/main`。
+- Spatial Storage 目前只作为作品集案例展示，独立的可操作演示站点尚未发布。
+
 ## 建议：GitHub Pages 起步，域名可后买，暂不租服务器
 
 作品集是纯静态 HTML、CSS、JavaScript 与图片，目前资源约 14 MB。护眼、自动背光和设备时间轴看板也在浏览器里直接渲染，不需要数据库或常驻后端。GitHub Pages 足够发布这一层。
