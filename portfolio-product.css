@@ -1,0 +1,54 @@
+/* Product-led editorial layer. Keep the same visual language across the index and cases. */
+.hero-case{display:flex;flex-direction:column;min-height:520px;padding:26px 28px 20px;background:#dce6dc;color:#153930;border:1px solid #9db7a6;transition:background .25s ease}
+.hero-case:hover{background:#d2e1d4}
+.hero-case-top,.hero-case-flow{display:flex;justify-content:space-between;gap:12px;font-family:var(--editorial-mono);font-size:10px;letter-spacing:.08em;font-weight:700}
+.hero-case-top{border-bottom:1px solid #98b3a3;padding-bottom:12px}
+.hero-case h2{display:flex;align-items:start;justify-content:space-between;gap:15px;font-family:var(--editorial-serif);font-size:clamp(40px,4vw,65px);font-weight:600;line-height:1.1;letter-spacing:-.035em;margin:28px 0 12px}
+.hero-case h2 span{font-family:system-ui,sans-serif;font-size:20px;font-weight:400;color:#1557dd}
+.hero-case-art{flex:1;min-height:220px;display:grid;place-items:center;overflow:hidden}
+.hero-case-art img{display:block;width:100%;max-height:290px;object-fit:contain;mix-blend-mode:multiply}
+.hero-case-flow{border-top:1px solid #98b3a3;padding-top:14px;flex-wrap:wrap;color:#35574d}
+.hero-case-flow span+span:before{content:'→';margin-right:10px;color:#1557dd}
+.terminal-visual{margin:0;height:100%;min-height:0;background:#e1e9e0;color:#153930;display:flex;flex-direction:column;padding:16px 20px 14px;overflow:hidden}
+.terminal-visual-head{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #a5baaa;padding-bottom:7px;font-family:var(--editorial-mono);font-size:9px;letter-spacing:.05em}
+.terminal-visual-center{display:grid;grid-template-columns:minmax(0,.25fr) minmax(0,1fr) minmax(0,.25fr);gap:6px;align-items:center;flex:1;min-height:0}
+.terminal-visual-center>div{display:flex;flex-direction:column;gap:4px;text-align:center}
+.terminal-visual-center>div span{color:#6a8374;font-family:var(--editorial-mono);font-size:8px;letter-spacing:.08em}
+.terminal-visual-center>div strong{font-size:12px;font-weight:700}
+.terminal-visual-center img{display:block;width:100%;height:100%;min-height:0;object-fit:contain;mix-blend-mode:multiply}
+.terminal-visual figcaption{border-top:1px solid #a5baaa;padding-top:8px;text-align:center;font-size:10px;font-weight:700}
+.terminal-visual figcaption span{color:#1557dd;margin:0 6px}
+.featured-list .terminal-visual,.detail-media .terminal-visual{padding:13px 16px 10px}
+.featured-list .terminal-visual-center>div,.detail-media .terminal-visual-center>div{display:none}
+.featured-list .terminal-visual-center,.detail-media .terminal-visual-center{grid-template-columns:1fr}
+.featured-list .terminal-visual-head,.detail-media .terminal-visual-head{font-size:7px}
+.featured-list .terminal-visual figcaption,.detail-media .terminal-visual figcaption{font-size:8px}
+.terminal-cover{height:min(620px,47vw);min-height:390px;background:#e1e9e0}
+.terminal-cover .terminal-visual{padding:30px 44px 25px}
+.terminal-cover .terminal-visual-head{font-size:11px}
+.terminal-cover .terminal-visual-center img{max-height:450px}
+.terminal-cover .terminal-visual-center>div strong{font-size:16px}
+.terminal-cover .terminal-visual figcaption{font-size:13px}
+.data-lens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-bottom:35px}
+.data-lens>div{border-top:1px solid #153930;padding:14px 25px 8px 0;display:flex;flex-direction:column;gap:9px}
+.data-lens>div+div{padding-left:25px;border-left:1px solid #aebfb3}
+.data-lens span{font-family:var(--editorial-mono);font-size:10px;color:#1557dd;letter-spacing:.04em}
+.data-lens strong{font-family:var(--editorial-serif);font-size:clamp(17px,1.65vw,22px);font-weight:600;line-height:1.4}
+.product-story{display:grid;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr);gap:clamp(35px,6vw,95px);padding-top:clamp(70px,9vw,130px);padding-bottom:clamp(70px,8vw,110px)}
+.product-story-intro h2{font-family:var(--editorial-serif);font-weight:600;font-size:clamp(36px,4vw,60px);line-height:1.15;letter-spacing:-.03em;margin:16px 0 25px}
+.product-story-intro>p:last-child{font-size:15px;line-height:1.85;color:#4b665e;max-width:30em}
+.product-story-steps{border-top:1px solid #153930}
+.product-story-steps article{display:grid;grid-template-columns:110px 1fr;gap:8px 20px;border-bottom:1px solid #aebfb3;padding:22px 0}
+.product-story-steps article>span{grid-row:span 2;color:#1557dd;font-family:var(--editorial-mono);font-size:11px;font-weight:700}
+.product-story-steps h3{font-family:var(--editorial-serif);font-weight:600;font-size:clamp(21px,2.2vw,30px);margin:0}
+.product-story-steps p{grid-column:2;color:#4b665e;font-size:13px;line-height:1.8;margin:0}
+.terminal-cover+.product-story+.project-body{padding-top:0}
+.related-cases{padding-bottom:90px}
+.related-cases>div{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid #153930}
+.related-cases a{display:flex;justify-content:space-between;gap:18px;padding:22px 10px 22px 0;border-bottom:1px solid #aebfb3;font-family:var(--editorial-serif);font-size:clamp(19px,2.1vw,28px)}
+.related-cases a:nth-child(odd){margin-right:25px}
+.related-cases a b{color:#1557dd;font-family:system-ui,sans-serif;font-size:17px;font-weight:400}
+.related-cases a:hover{color:#1557dd}
+@media(max-width:760px){.hero-case{min-height:440px}.hero-case-art img{max-height:240px}.terminal-cover{height:430px;min-height:0}.terminal-cover .terminal-visual{padding:20px}.data-lens{grid-template-columns:1fr;padding-bottom:20px}.data-lens>div,.data-lens>div+div{border-left:0;padding:10px 0}.data-lens strong{font-size:17px}.product-story{grid-template-columns:1fr;gap:25px}.terminal-cover+.product-story+.project-body{padding-top:45px}.related-cases{padding-bottom:60px}}
+@media(max-width:500px){.hero-case{min-height:390px;padding:18px}.hero-case h2{font-size:42px}.hero-case-flow{font-size:8px;justify-content:flex-start}.hero-case-art{min-height:165px}.hero-case-art img{max-height:190px}.terminal-cover{height:340px}.terminal-cover .terminal-visual-center>div{display:none}.terminal-cover .terminal-visual-center{grid-template-columns:1fr}.terminal-cover .terminal-visual-head{font-size:8px}.terminal-cover .terminal-visual figcaption{font-size:10px}.product-story-steps article{grid-template-columns:1fr;gap:7px}.product-story-steps article>span{grid-row:auto}.product-story-steps p{grid-column:1}.related-cases>div{grid-template-columns:1fr}.related-cases a:nth-child(odd){margin-right:0}}
+@media(prefers-reduced-motion:reduce){.hero-case{transition:none}}

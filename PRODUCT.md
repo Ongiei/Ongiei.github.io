@@ -4,19 +4,19 @@
 
 ## Platform
 
-Static web portfolio on GitHub Pages.
+Static web portfolio on Tencent EdgeOne, with GitHub Pages as a backup.
 
 ## Users
 
-招聘方和面试官是首要读者。他们需要快速理解候选人的跨领域定位、项目范围和可见的设计判断。
+硬件产品经理岗位的招聘方和面试官是首要读者。他们需要快速理解候选人的产品定义、系统落地、数据验证与跨领域能力。
 
 ## Product Purpose
 
-展示建筑设计、智能硬件、数据分析看板与数字产品的九个已发布案例，并用“space → system → interface”解释从物理空间到数字系统的路径。
+展示九个已发布案例，用“空间 → 系统 → 数据 → 产品”说明从场景到硬件产品决策的工作方法。产品贯穿各阶段；独立数字产品只是其中一类作品。
 
 ## Positioning
 
-弓弼飞的作品从场景与空间组织延伸到设备形态、行为分析和数字界面；案例以具体问题、约束、决策及作品媒介呈现。
+以家庭语音触控终端为主案例，呈现需求定义、整机选型、样机集成与小批量导入；数据案例说明分析如何服务显示体验的产品判断。建筑与独立产品展现跨尺度方法。
 
 ## Operating Context
 
@@ -24,7 +24,8 @@ Static web portfolio on GitHub Pages.
 
 ## Capabilities and Constraints
 
-- 四领域、九案例；领域下有多个项目而非单一代表。
+- 九案例，按智能硬件、数据分析、独立产品、建筑设计四类索引。分类用于浏览，产品链路用于解释能力。
+- 家庭语音触控终端是同一个案例，产品规划与系统落地在同一页呈现。
 - 数据看板直接嵌入案例页面，保留多章节的分析结构。
 - 建筑方案以分析和表现为主，技术图纸克制使用。
 - 首页的三维空间场景为可跳过的增强体验；导航和项目阅读不依赖它。
@@ -32,7 +33,7 @@ Static web portfolio on GitHub Pages.
 
 ## Evidence on Hand
 
-现有项目数据、建筑图册、硬件渲染图、三个数据看板章节与 Spatial Storage 界面图均在仓库内，直接用于案例页面。
+现有项目数据、建筑图册、终端早期方案草图、三个数据看板章节与 Spatial Storage 界面图均在仓库内。终端草图仅作为方案过程材料，不承担成果证明。
 
 ## Product Principles
 

@@ -3,12 +3,12 @@ window.PORTFOLIO_PROJECTS = [
     "slug": "cm5-home-gateway",
     "category": "hardware",
     "categoryLabel": "智能硬件",
-    "index": "01",
+    "index": "02",
     "title": "CM5 家庭网关",
     "subtitle": "面向家庭设备联动的网关产品形态",
-    "summary": "围绕家庭设备接入与日常维护，呈现两种网关外观方案。",
+    "summary": "从家庭设备接入、安装与维护出发，比较家庭网关的两种产品形态。",
     "period": "硬件产品设计",
-    "featured": true,
+    "featured": false,
     "media": [
       {
         "src": "assets/hardware/home-gateway.png",
@@ -41,40 +41,52 @@ window.PORTFOLIO_PROJECTS = [
     "outcome": "外观图呈现了家庭网关与 CM5 + Zigbee 版本的产品形态。"
   },
   {
-    "slug": "voice-ui-prototype",
+    "slug": "voice-touch-terminal",
     "category": "hardware",
     "categoryLabel": "智能硬件",
-    "index": "02",
-    "title": "1.85 英寸语音助手",
-    "subtitle": "小尺寸屏幕上的语音交互探索",
-    "summary": "围绕圆形屏幕与实体设备，探索语音助手的界面形态。",
-    "period": "交互原型",
-    "featured": false,
+    "index": "01",
+    "title": "家庭语音触控终端",
+    "subtitle": "从使用场景到整机方案的 0→1 产品实践",
+    "summary": "从需求定义、器件选型到样机集成与小批量导入，推动家庭语音触控终端落地。",
+    "period": "0→1 硬件产品",
+    "role": "整机产品规划与推进",
+    "featured": true,
+    "featuredOrder": 1,
+    "visualType": "terminal",
     "media": [
       {
-        "src": "assets/hardware/voice-assistant-1-85.png",
-        "alt": "1.85 英寸语音助手圆形设备外观渲染图",
-        "caption": "1.85 英寸语音助手 · 外观方案渲染图"
+        "src": "assets/hardware/voice-touch-terminal-86.png",
+        "alt": "家庭语音触控终端的早期外观方案草图，展示屏幕与面板布局",
+        "caption": "早期外观方案草图 · 终端面板与屏幕布局"
       }
     ],
-    "question": "有限的屏幕空间，怎样呈现语音交互的状态与反馈？",
-    "context": "1.85 英寸语音助手将屏幕嵌入圆形设备中。小屏幕的主要任务是让用户在短暂注视中识别设备状态与交互反馈。",
+    "question": "如何把家庭场景中的语音与触控需求，定义为可集成、可交付的终端产品？",
+    "context": "这是一项从需求定义开始的整机产品实践。我负责梳理家庭使用场景与终端能力，形成产品方案，并推进 MCU、显示、通信等选型与样机集成，进入小批量生产导入。",
     "constraints": [
-      "核心信息需要在小屏上一眼可读",
-      "视觉反馈应匹配语音交互节奏",
-      "设备外观与屏幕内容需要保持一致"
+      "语音与触控需要共同服务于家庭设备控制场景",
+      "整机方案要同时考虑 MCU、显示、通信与成本约束",
+      "样机集成需要为后续的小批量生产导入留出路径"
     ],
     "decisions": [
       [
-        "优先呈现关键状态",
-        "将屏幕作为语音交互的即时反馈窗口。"
+        "从家庭场景定义能力",
+        "先确定用户如何发起控制、如何确认设备响应，再把需求转成终端能力与交互边界。"
       ],
       [
-        "控制视觉层级",
-        "在圆形显示区域内保留清晰的中心信息和外围留白。"
+        "整机选型与方案收敛",
+        "围绕 MCU、显示、通信方式及 BOM 进行方案权衡，让功能目标与实现条件对应。"
+      ],
+      [
+        "从样机推进到导入",
+        "协调样机集成与问题收敛，推动方案进入小批量生产导入。"
       ]
     ],
-    "outcome": "外观方案呈现了语音助手的设备形态与屏幕布局。"
+    "productStory": [
+      { "label": "01 / 产品定义", "title": "从家庭场景识别控制需求", "text": "把用户触发、设备反馈与日常使用路径转化为终端需要具备的能力，确定语音和触控各自承担的交互任务。" },
+      { "label": "02 / 系统方案", "title": "让能力与硬件条件对齐", "text": "在 MCU、显示、通信与 BOM 之间做整机方案权衡，并把选择带入样机集成。" },
+      { "label": "03 / 交付推进", "title": "从可演示样机走向可导入方案", "text": "跟进集成问题与方案调整，使终端进入小批量生产导入。" }
+    ],
+    "outcome": "完成家庭语音触控终端的整机产品方案，推进样机集成与小批量生产导入。"
   },
   {
     "slug": "eye-care-dashboard",
@@ -83,11 +95,13 @@ window.PORTFOLIO_PROJECTS = [
     "index": "03",
     "title": "护眼功能数据看板",
     "subtitle": "从功能触达到持续使用的分析结构",
-    "summary": "将入口触达、开启、设置偏好和留存组织成连贯的分析路径。",
+    "summary": "从触达、开启到持续使用，寻找护眼功能体验和产品迭代的判断依据。",
     "period": "数据分析",
     "featured": true,
+    "featuredOrder": 2,
+    "dataLens": ["产品问题 / 功能是否被理解并持续使用", "观察路径 / 触达 → 开启 → 设置偏好 → 留存", "判断用途 / 定位入口、解释与持续使用环节"],
     "question": "怎样理解护眼功能从被看见到持续使用的全过程？",
-    "context": "看板沿页面访问、功能交互、开启状态、设置偏好与后续保持展开，使不同阶段的问题能够分别被观察。",
+    "context": "在 OPPO 显示体验方向，护眼功能需要区分‘用户看到入口’‘主动开启’与‘持续使用’。看板沿页面访问、功能交互、开启状态、设置偏好与后续保持展开，为入口优化、功能解释和后续验证提供问题定位路径。",
     "constraints": [
       "区分触达、开启与实际生效的口径",
       "不同功能的观察窗口与支持设备范围需要一致",
@@ -118,8 +132,9 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "将模式时长、环境光、亮度分布与手动调整放回使用场景。",
     "period": "数据分析",
     "featured": false,
+    "dataLens": ["产品问题 / 自动调节何时偏离用户预期", "观察路径 / 环境光 → 屏幕亮度 → 手动干预", "判断用途 / 识别场景并为策略优化提供线索"],
     "question": "自动调节在什么场景下需要用户再次干预？",
-    "context": "看板从自动与手动模式的使用结构开始，再观察环境光和屏幕亮度的关系，并沿拖动事件追问前台应用与时间背景。",
+    "context": "自动背光的产品问题是：系统调节与用户预期在哪些场景出现偏差？看板从自动与手动模式的使用结构开始，再观察环境光和屏幕亮度的关系，并沿拖动事件追问前台应用与时间背景，为策略优化与问题复现提供线索。",
     "constraints": [
       "环境光与屏幕亮度使用不同单位",
       "手动调整需要对应发生时的使用场景",
@@ -150,8 +165,9 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "用统一时间轴串联屏幕、应用、亮度、手势与系统状态。",
     "period": "数据分析",
     "featured": false,
+    "dataLens": ["产品问题 / 一次异常体验是怎样发生的", "观察路径 / 总体变化 → 设备片段 → 事件链", "判断用途 / 支持问题复现与跨事件定位"],
     "question": "跨越多条事件链的使用问题，怎样回到具体发生的过程？",
-    "context": "常规看板适合观察总体变化；定位一次具体使用时，需要把设备状态、前台应用、亮度变化与系统事件放在同一时间坐标。",
+    "context": "当整体指标出现波动时，产品判断还需要回到用户的具体使用过程。时间轴将设备状态、前台应用、亮度变化与系统事件放在同一坐标中，支持跨事件链定位和问题复现。",
     "constraints": [
       "不同事件的时间口径需要对齐",
       "总体趋势要能下钻到单次使用片段",
@@ -176,12 +192,13 @@ window.PORTFOLIO_PROJECTS = [
     "slug": "dezhou-exhibition-center",
     "category": "architecture",
     "categoryLabel": "建筑设计",
-    "index": "06",
+    "index": "07",
     "title": "德州国际会展中心",
     "subtitle": "以城市轴线和展厅单元组织大型公共空间",
     "summary": "从城市关系、场馆组合与内部流线推演概念方案。",
     "period": "2022",
     "featured": true,
+    "featuredOrder": 4,
     "media": [
       {
         "src": "assets/architecture/dezhou-aerial-redraw.webp",
@@ -280,7 +297,7 @@ window.PORTFOLIO_PROJECTS = [
     "slug": "zhengzhou-exhibition-center",
     "category": "architecture",
     "categoryLabel": "建筑设计",
-    "index": "07",
+    "index": "08",
     "title": "郑州高新区会展中心",
     "subtitle": "紧凑用地上的会展复合体构想",
     "summary": "结合区位、会展需求与用地约束，呈现会展复合方案。",
@@ -385,7 +402,7 @@ window.PORTFOLIO_PROJECTS = [
     "slug": "longchang-civic-center",
     "category": "architecture",
     "categoryLabel": "建筑设计",
-    "index": "08",
+    "index": "09",
     "title": "重坊叠韵",
     "subtitle": "以牌坊街和夏布意象组织公共中庭",
     "summary": "从历史轴线、体量拆分到中庭体验，呈现公共建筑设计推演。",
@@ -482,14 +499,15 @@ window.PORTFOLIO_PROJECTS = [
   {
     "slug": "spatial-storage",
     "category": "research",
-    "categoryLabel": "数字产品",
-    "index": "09",
+    "categoryLabel": "独立产品",
+    "index": "06",
     "title": "Spatial Storage 空间收纳",
     "subtitle": "把家庭物品清单与房间空间连接起来",
     "summary": "从“东西在哪里”出发，设计收纳树、搜索与可视化空间工作区。",
     "role": "个人项目 · 产品与 Web 原型",
     "period": "数字产品",
     "featured": true,
+    "featuredOrder": 3,
     "media": [
       {
         "src": "assets/spatial-storage-overview.jpg",
@@ -531,7 +549,7 @@ window.PORTFOLIO_COLLECTIONS = [
   {
     "id": "hardware",
     "label": "智能硬件",
-    "description": "家庭网关与小屏语音助手，呈现设备形态和交互问题。"
+    "description": "家庭语音触控终端与家庭网关，阅读产品定义、整机方案和设备形态。"
   },
   {
     "id": "data",
@@ -545,7 +563,7 @@ window.PORTFOLIO_COLLECTIONS = [
   },
   {
     "id": "research",
-    "label": "数字产品",
+    "label": "独立产品",
     "description": "Spatial Storage 将收纳信息与空间视图连接成一个可操作的产品原型。"
   }
 ];
