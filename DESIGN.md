@@ -9,12 +9,12 @@
 - Mineral paper `#e9eee9`, pale sheet `#f7f9f5`, deep ink `#153930`, secondary ink `#4b665e`, rules `#bbc9c0`, and signal blue `#1557dd`.
 - Baskerville / Songti SC is reserved for the large thesis, page titles, and chapter openings. System sans is used for navigation, case names, descriptions, and controls. Mono is used only for index and coordinate notation.
 - Asymmetric editorial grids and horizontal rules organize content. The work index uses a ledger and an adjacent project reading pane. Equal project cards are avoided.
-- Show the real medium: architectural spreads, physical device images, the embedded data chapters, and digital product screens. The terminal's early sketch stays inside a smaller editorial frame; the product story carries the main proof.
+- Show the real medium: architectural spreads, physical device images, the embedded data chapters, and digital product screens. Hardware concepts use labeled AI-assisted studio renders; original renderings and actual work photographs remain distinct.
 
 ## Motion and interaction
 
 - The home page has one optional Three.js spatial interlude. Its simple geometry abstracts the radial organization of the Dezhou exhibition centre and transitions to nodes and an interface plane. It is a navigation aid, not a claimed project rendering.
-- All routes, case links, and the work index work without WebGL or script driven animation. The interlude uses a static project image if WebGL is unavailable, on narrow screens, or under reduced motion.
+- All routes, case links, and the work index work without WebGL or animated transitions; case content and filtering require JavaScript. The interlude uses a static project image if WebGL is unavailable, on narrow screens, or under reduced motion.
 - Work index filters narrow the ledger; selecting a row updates the adjacent detail pane. A direct case link remains visible. Keyboard focus and selected state are explicit.
 - Same-origin page changes use a short editorial reveal where the browser supports cross-document view transitions; other browsers use normal navigation.
 - Project pages stay calm so drawings and analytical charts can be read without motion. No animated diagrams, pinned case studies, or cursor effects over dense content.

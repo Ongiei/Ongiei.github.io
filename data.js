@@ -11,14 +11,58 @@ window.PORTFOLIO_PROJECTS = [
     "featured": false,
     "media": [
       {
-        "src": "assets/hardware/home-gateway.png",
+        "src": "assets/hardware/home-gateway-studio-v2.webp",
         "alt": "家庭网关外观方案的白色盒体渲染图",
-        "caption": "家庭网关 · 外观方案渲染图"
+        "caption": "家庭网关 · 外观方案 AI 辅助渲染",
+        "kind": "方案渲染",
+        "original": "assets/hardware/home-gateway.png",
+        "width": 1672,
+        "height": 941
       },
       {
-        "src": "assets/hardware/cm5-gateway-zigbee.png",
+        "src": "assets/hardware/cm5-gateway-studio-v2.webp",
         "alt": "带 Zigbee 的 CM5 家庭网关外观方案渲染图",
-        "caption": "CM5 + Zigbee 版本 · 外观方案渲染图"
+        "caption": "CM5 + Zigbee 外观方案 · AI 辅助渲染",
+        "kind": "方案渲染",
+        "original": "assets/hardware/cm5-gateway-zigbee.png",
+        "width": 1672,
+        "height": 941
+      },
+      {
+        "src": "assets/work/gateway-enclosures.webp",
+        "alt": "两种颜色的网关外壳及对应板卡",
+        "caption": "六方式工作记录 · 外壳与板卡实拍",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/work/gateway-components.webp",
+        "alt": "拆分展示的网关外壳与电路板",
+        "caption": "六方式工作记录 · 结构与板卡拆分",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/work/gateway-assembly.webp",
+        "alt": "网关内部板卡堆叠与支撑柱装配",
+        "caption": "六方式工作记录 · 装配结构",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 960,
+        "height": 1280
+      },
+      {
+        "src": "assets/work/gateway-open-board.webp",
+        "alt": "打开外壳的网关板卡、散热与连接线",
+        "caption": "六方式工作记录 · 开壳观察",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 1200,
+        "height": 1600
       }
     ],
     "question": "如何为家庭中的多类设备建立清晰的连接入口？",
@@ -38,7 +82,9 @@ window.PORTFOLIO_PROJECTS = [
         "并列展示两种方案，突出产品系列中的延续与变化。"
       ]
     ],
-    "outcome": "外观图呈现了家庭网关与 CM5 + Zigbee 版本的产品形态。"
+    "outcome": "呈现家庭网关的两种外观方案，并补充归档中的外壳、板卡与装配实拍。渲染图说明产品形态，实物照片提供工作过程的观察依据。",
+    "status": "外观方案与样机工作记录",
+    "evidenceNote": "前两张为外观方案渲染，后续为六方式项目归档中的网关实拍。照片用于展示外壳、板卡和装配过程，不据此推定具体配置或验证结果。"
   },
   {
     "slug": "voice-touch-terminal",
@@ -55,9 +101,20 @@ window.PORTFOLIO_PROJECTS = [
     "visualType": "terminal",
     "media": [
       {
+        "src": "assets/hardware/voice-touch-terminal-studio-v2.webp",
+        "alt": "家庭语音触控终端概念渲染：白色面板、黑色屏幕与橙色按钮",
+        "caption": "外观方案 · AI 辅助渲染，非量产实拍",
+        "kind": "方案渲染",
+        "width": 1672,
+        "height": 941
+      },
+      {
         "src": "assets/hardware/voice-touch-terminal-86.png",
-        "alt": "家庭语音触控终端的早期外观方案草图，展示屏幕与面板布局",
-        "caption": "早期外观方案草图 · 终端面板与屏幕布局"
+        "alt": "家庭语音触控终端早期外观方案的原始渲染图",
+        "caption": "早期外观方案 · 原始渲染留档",
+        "kind": "原始方案",
+        "width": 900,
+        "height": 700
       }
     ],
     "question": "如何把家庭场景中的语音与触控需求，定义为可集成、可交付的终端产品？",
@@ -82,11 +139,25 @@ window.PORTFOLIO_PROJECTS = [
       ]
     ],
     "productStory": [
-      { "label": "01 / 产品定义", "title": "从家庭场景识别控制需求", "text": "把用户触发、设备反馈与日常使用路径转化为终端需要具备的能力，确定语音和触控各自承担的交互任务。" },
-      { "label": "02 / 系统方案", "title": "让能力与硬件条件对齐", "text": "在 MCU、显示、通信与 BOM 之间做整机方案权衡，并把选择带入样机集成。" },
-      { "label": "03 / 交付推进", "title": "从可演示样机走向可导入方案", "text": "跟进集成问题与方案调整，使终端进入小批量生产导入。" }
+      {
+        "label": "01 / 产品定义",
+        "title": "从家庭场景识别控制需求",
+        "text": "把用户触发、设备反馈与日常使用路径转化为终端需要具备的能力，确定语音和触控各自承担的交互任务。"
+      },
+      {
+        "label": "02 / 系统方案",
+        "title": "让能力与硬件条件对齐",
+        "text": "在 MCU、显示、通信与 BOM 之间做整机方案权衡，并把选择带入样机集成。"
+      },
+      {
+        "label": "03 / 交付推进",
+        "title": "从可演示样机走向可导入方案",
+        "text": "跟进集成问题与方案调整，使终端进入小批量生产导入。"
+      }
     ],
-    "outcome": "完成家庭语音触控终端的整机产品方案，推进样机集成与小批量生产导入。"
+    "outcome": "完成家庭语音触控终端的整机产品方案，推进样机集成与小批量生产导入。",
+    "status": "整机方案 / 样机集成 / 小批量导入",
+    "evidenceNote": "图像为基于早期外观方案重绘的概念渲染；屏幕内容仅为外观示意。"
   },
   {
     "slug": "eye-care-dashboard",
@@ -99,7 +170,11 @@ window.PORTFOLIO_PROJECTS = [
     "period": "数据分析",
     "featured": true,
     "featuredOrder": 2,
-    "dataLens": ["产品问题 / 功能是否被理解并持续使用", "观察路径 / 触达 → 开启 → 设置偏好 → 留存", "判断用途 / 定位入口、解释与持续使用环节"],
+    "dataLens": [
+      "产品问题 / 功能是否被理解并持续使用",
+      "观察路径 / 触达 → 开启 → 设置偏好 → 留存",
+      "判断用途 / 定位入口、解释与持续使用环节"
+    ],
     "question": "怎样理解护眼功能从被看见到持续使用的全过程？",
     "context": "在 OPPO 显示体验方向，护眼功能需要区分‘用户看到入口’‘主动开启’与‘持续使用’。看板沿页面访问、功能交互、开启状态、设置偏好与后续保持展开，为入口优化、功能解释和后续验证提供问题定位路径。",
     "constraints": [
@@ -120,7 +195,10 @@ window.PORTFOLIO_PROJECTS = [
         "把设置偏好纳入使用深度",
         "用定时配置与提醒触发理解功能如何融入日常。"
       ]
-    ]
+    ],
+    "status": "分析方法展示",
+    "evidenceNote": "图表使用模拟数据演示分析结构，不代表 OPPO 真实业务指标、已上线效果或用户轨迹。",
+    "outcome": "形成从产品问题到统计口径、观察维度与下钻路径的分析结构。公开页面展示方法与示例图表，未展示真实业务结果。"
   },
   {
     "slug": "auto-backlight-dashboard",
@@ -132,7 +210,11 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "将模式时长、环境光、亮度分布与手动调整放回使用场景。",
     "period": "数据分析",
     "featured": false,
-    "dataLens": ["产品问题 / 自动调节何时偏离用户预期", "观察路径 / 环境光 → 屏幕亮度 → 手动干预", "判断用途 / 识别场景并为策略优化提供线索"],
+    "dataLens": [
+      "产品问题 / 自动调节何时偏离用户预期",
+      "观察路径 / 环境光 → 屏幕亮度 → 手动干预",
+      "判断用途 / 识别场景并为策略优化提供线索"
+    ],
     "question": "自动调节在什么场景下需要用户再次干预？",
     "context": "自动背光的产品问题是：系统调节与用户预期在哪些场景出现偏差？看板从自动与手动模式的使用结构开始，再观察环境光和屏幕亮度的关系，并沿拖动事件追问前台应用与时间背景，为策略优化与问题复现提供线索。",
     "constraints": [
@@ -153,7 +235,10 @@ window.PORTFOLIO_PROJECTS = [
         "把调整行为放回现场",
         "结合时间、应用与调整前后亮度理解干预。"
       ]
-    ]
+    ],
+    "status": "分析方法展示",
+    "evidenceNote": "图表使用模拟数据演示分析结构，不代表 OPPO 真实业务指标、已上线效果或用户轨迹。",
+    "outcome": "形成从产品问题到统计口径、观察维度与下钻路径的分析结构。公开页面展示方法与示例图表，未展示真实业务结果。"
   },
   {
     "slug": "device-timeline",
@@ -165,7 +250,11 @@ window.PORTFOLIO_PROJECTS = [
     "summary": "用统一时间轴串联屏幕、应用、亮度、手势与系统状态。",
     "period": "数据分析",
     "featured": false,
-    "dataLens": ["产品问题 / 一次异常体验是怎样发生的", "观察路径 / 总体变化 → 设备片段 → 事件链", "判断用途 / 支持问题复现与跨事件定位"],
+    "dataLens": [
+      "产品问题 / 一次异常体验是怎样发生的",
+      "观察路径 / 总体变化 → 设备片段 → 事件链",
+      "判断用途 / 支持问题复现与跨事件定位"
+    ],
     "question": "跨越多条事件链的使用问题，怎样回到具体发生的过程？",
     "context": "当整体指标出现波动时，产品判断还需要回到用户的具体使用过程。时间轴将设备状态、前台应用、亮度变化与系统事件放在同一坐标中，支持跨事件链定位和问题复现。",
     "constraints": [
@@ -186,7 +275,10 @@ window.PORTFOLIO_PROJECTS = [
         "保留上下文",
         "把异常前后的状态变化放在一起阅读。"
       ]
-    ]
+    ],
+    "status": "分析方法展示",
+    "evidenceNote": "图表使用模拟数据演示分析结构，不代表 OPPO 真实业务指标、已上线效果或用户轨迹。",
+    "outcome": "形成从产品问题到统计口径、观察维度与下钻路径的分析结构。公开页面展示方法与示例图表，未展示真实业务结果。"
   },
   {
     "slug": "dezhou-exhibition-center",
@@ -203,20 +295,32 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/dezhou-aerial-redraw.webp",
         "alt": "德州国际会展中心放射状场馆与城市水面关系鸟瞰",
-        "caption": "城市轴线与场馆鸟瞰",
-        "layout": "wide"
+        "caption": "城市轴线与场馆鸟瞰 · 方案效果图 · AI 重绘",
+        "layout": "wide",
+        "kind": "方案效果图 · AI 重绘",
+        "original": "assets/architecture/dezhou-aerial.webp",
+        "width": 1672,
+        "height": 941
       },
       {
-        "src": "assets/architecture/dezhou-spatial-analysis-redraw.webp",
+        "src": "assets/architecture/dezhou-spatial-analysis-v2.webp",
         "alt": "六组展厅围合公共中心及城市入口的空间关系图",
-        "caption": "城市轴线、展厅单元与公共中心",
-        "layout": "diagram"
+        "caption": "城市轴线、展厅单元与公共中心 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "kind": "分析示意 · AI 重绘",
+        "original": "assets/architecture/dezhou-concept-axis.webp",
+        "width": 1672,
+        "height": 940
       },
       {
-        "src": "assets/architecture/dezhou-routes-analysis-redraw.webp",
+        "src": "assets/architecture/dezhou-routes-analysis-v2.webp",
         "alt": "公共入口经中心大厅分配到六组展厅的流线关系图",
-        "caption": "公共到达与展厅外围动线",
-        "layout": "diagram"
+        "caption": "公共到达与展厅外围动线 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "kind": "分析示意 · AI 重绘",
+        "original": "assets/architecture/dezhou-circulation.webp",
+        "width": 1672,
+        "height": 941
       },
       {
         "images": [
@@ -239,8 +343,12 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/dezhou-interior-redraw.webp",
         "alt": "德州会展中心木质顶棚下的公共大厅",
-        "caption": "公共大厅 · 人行尺度",
-        "layout": "wide"
+        "caption": "公共大厅 · 人行尺度 · 方案效果图 · AI 重绘",
+        "layout": "wide",
+        "kind": "方案效果图 · AI 重绘",
+        "original": "assets/architecture/dezhou-interior.webp",
+        "width": 2106,
+        "height": 747
       }
     ],
     "architectureSections": [
@@ -291,7 +399,9 @@ window.PORTFOLIO_PROJECTS = [
         "以图纸和空间视角相互校验",
         "平面解释使用逻辑，效果图呈现尺度与氛围。"
       ]
-    ]
+    ],
+    "status": "建筑概念方案",
+    "evidenceNote": "方案分析与空间表现；AI 重绘图用于说明设计关系，原始图可在图注中查看。"
   },
   {
     "slug": "zhengzhou-exhibition-center",
@@ -307,44 +417,70 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/zhengzhou-aerial-redraw.webp",
         "alt": "郑州高新区会展中心方案一日景鸟瞰",
-        "caption": "方案一 · 场馆与屋顶公共空间",
-        "layout": "wide"
+        "caption": "方案一 · 场馆与屋顶公共空间 · 方案效果图 · AI 重绘",
+        "layout": "wide",
+        "kind": "方案效果图 · AI 重绘",
+        "original": "assets/architecture/zhengzhou-aerial.webp",
+        "width": 1491,
+        "height": 1055
       },
       {
-        "src": "assets/architecture/zhengzhou-site.webp",
+        "src": "assets/architecture/zhengzhou-site-analysis-v2.webp",
         "alt": "郑州高新区会展中心场地周边条件分析",
-        "caption": "场地边界与周边城市资源",
-        "layout": "wide"
+        "caption": "场地边界与周边城市资源 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "original": "assets/architecture/zhengzhou-site.webp",
+        "kind": "分析示意 · AI 重绘",
+        "width": 1491,
+        "height": 1055
       },
       {
-        "src": "assets/architecture/zhengzhou-massing-analysis-redraw.webp",
+        "src": "assets/architecture/zhengzhou-massing-analysis-v2.webp",
         "alt": "会展功能落位、体量塑形与城市互动的三步分析图",
-        "caption": "功能落位、空间塑形与城市互动",
-        "layout": "diagram"
+        "caption": "功能落位、空间塑形与城市互动 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "kind": "分析示意 · AI 重绘",
+        "original": "assets/architecture/zhengzhou-massing.webp",
+        "width": 1672,
+        "height": 941
       },
       {
-        "src": "assets/architecture/zhengzhou-program-analysis-redraw.webp",
+        "src": "assets/architecture/zhengzhou-program-analysis-v2.webp",
         "alt": "展览、公共大厅、会议与酒店的功能关系图",
-        "caption": "复合功能围绕公共大厅组织",
-        "layout": "diagram"
+        "caption": "复合功能围绕公共大厅组织 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "kind": "分析示意 · AI 重绘",
+        "original": "assets/architecture/zhengzhou-program.webp",
+        "width": 1672,
+        "height": 941
       },
       {
         "src": "assets/architecture/zhengzhou-masterplan.webp",
         "alt": "郑州高新区会展中心方案一总平面图",
         "caption": "总平面 · 入口与总体布局",
-        "layout": "wide"
+        "layout": "wide",
+        "width": 1800,
+        "height": 1273
       },
       {
-        "src": "assets/architecture/zhengzhou-landscape.webp",
-        "alt": "郑州高新区会展中心屋顶绿化分析图",
-        "caption": "屋顶与城市绿地的连接",
-        "layout": "wide"
+        "src": "assets/architecture/zhengzhou-landscape-analysis-v2.webp",
+        "alt": "场地边界与周边绿地之间的方向性连接示意",
+        "caption": "场地与周边绿地的连接 · 分析示意 / AI 重绘",
+        "layout": "diagram",
+        "original": "assets/architecture/zhengzhou-landscape.webp",
+        "kind": "分析示意 · AI 重绘",
+        "width": 1491,
+        "height": 1055
       },
       {
         "src": "assets/architecture/zhengzhou-street-redraw.webp",
         "alt": "郑州高新区会展中心日间沿街透视",
-        "caption": "沿街视角 · 建筑与行人尺度",
-        "layout": "wide"
+        "caption": "沿街视角 · 建筑与行人尺度 · 方案效果图 · AI 重绘",
+        "layout": "wide",
+        "kind": "方案效果图 · AI 重绘",
+        "original": "assets/architecture/zhengzhou-street.webp",
+        "width": 1491,
+        "height": 1055
       }
     ],
     "architectureSections": [
@@ -369,7 +505,7 @@ window.PORTFOLIO_PROJECTS = [
       {
         "label": "03 / 呈现",
         "title": "让城市界面与屋顶公共空间可见。",
-        "text": "绿地系统和沿街视角补充鸟瞰，呈现建筑与周边城市空间的关系。",
+        "text": "绿地关系图说明场地与周边公共空间的连接意图，沿街视角补充建筑的城市界面；该分析图不用于证明屋顶细部。",
         "images": [
           5,
           6
@@ -396,7 +532,9 @@ window.PORTFOLIO_PROJECTS = [
         "同时观察总图与街道尺度",
         "从入口、城市界面和行人体验校验总体方案。"
       ]
-    ]
+    ],
+    "status": "建筑概念方案",
+    "evidenceNote": "方案分析与空间表现；AI 重绘图用于说明设计关系，原始图可在图注中查看。"
   },
   {
     "slug": "longchang-civic-center",
@@ -412,38 +550,62 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/longchang-courtyard-redraw.webp",
         "alt": "重坊叠韵方案的公共中庭与框景",
-        "caption": "公共中庭 · 天运楼框景",
-        "layout": "wide"
+        "caption": "公共中庭 · 天运楼框景 · 方案效果图 · AI 重绘",
+        "layout": "wide",
+        "kind": "方案效果图 · AI 重绘",
+        "original": "assets/architecture/longchang-courtyard.webp",
+        "width": 1491,
+        "height": 1055
       },
       {
-        "src": "assets/architecture/longchang-axis-analysis-redraw.webp",
+        "src": "assets/architecture/longchang-axis-analysis-v2.webp",
         "alt": "天运楼、石牌坊与公共中庭之间的轴线关系",
-        "caption": "历史轴线进入公共中庭",
-        "layout": "diagram"
+        "caption": "历史轴线进入公共中庭 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "kind": "分析示意 · AI 重绘",
+        "original": "assets/architecture/longchang-axis.webp",
+        "width": 1671,
+        "height": 941
       },
       {
-        "src": "assets/architecture/longchang-massing-analysis-redraw.webp",
+        "src": "assets/architecture/longchang-massing-analysis-v2.webp",
         "alt": "建筑拆分为六个单元围合中庭的过程",
-        "caption": "六个单元围合中庭",
-        "layout": "diagram"
+        "caption": "六个单元围合中庭 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "kind": "分析示意 · AI 重绘",
+        "original": "assets/architecture/longchang-massing.webp",
+        "width": 1672,
+        "height": 941
       },
       {
-        "src": "assets/architecture/longchang-program-analysis-redraw.webp",
+        "src": "assets/architecture/longchang-program-analysis-v2.webp",
         "alt": "公共中庭与两侧功能空间的联系",
-        "caption": "中庭连接两侧功能",
-        "layout": "diagram"
+        "caption": "中庭连接两侧功能 · 分析示意 · AI 重绘",
+        "layout": "diagram",
+        "kind": "分析示意 · AI 重绘",
+        "original": "assets/architecture/longchang-program.webp",
+        "width": 1672,
+        "height": 941
       },
       {
         "src": "assets/architecture/longchang-aerial-redraw.webp",
         "alt": "重坊叠韵方案建筑与城市肌理的鸟瞰",
-        "caption": "鸟瞰 · 建筑与历史轴线",
-        "layout": "wide"
+        "caption": "鸟瞰 · 建筑与历史轴线 · 方案效果图 · AI 重绘",
+        "layout": "wide",
+        "kind": "方案效果图 · AI 重绘",
+        "original": "assets/architecture/longchang-aerial.webp",
+        "width": 1672,
+        "height": 941
       },
       {
         "src": "assets/architecture/longchang-street-redraw.webp",
         "alt": "重坊叠韵方案的沿街立面",
-        "caption": "沿街视角 · 街道尺度",
-        "layout": "wide"
+        "caption": "沿街视角 · 街道尺度 · 方案效果图 · AI 重绘",
+        "layout": "wide",
+        "kind": "方案效果图 · AI 重绘",
+        "original": "assets/architecture/longchang-street.webp",
+        "width": 1774,
+        "height": 887
       }
     ],
     "architectureSections": [
@@ -494,7 +656,9 @@ window.PORTFOLIO_PROJECTS = [
         "用框景与采光表达在地性",
         "让牌坊空间和夏布意象进入中庭体验。"
       ]
-    ]
+    ],
+    "status": "建筑概念方案",
+    "evidenceNote": "方案分析与空间表现；AI 重绘图用于说明设计关系，原始图可在图注中查看。"
   },
   {
     "slug": "spatial-storage",
@@ -503,25 +667,49 @@ window.PORTFOLIO_PROJECTS = [
     "index": "06",
     "title": "Spatial Storage 空间收纳",
     "subtitle": "把家庭物品清单与房间空间连接起来",
-    "summary": "从“东西在哪里”出发，设计收纳树、搜索与可视化空间工作区。",
-    "role": "个人项目 · 产品与 Web 原型",
+    "summary": "用可搜索的收纳路径连接 2D 布局和 3D 房间，从找到物品到定位所在家具。",
+    "role": "个人项目 · 产品定义与 Web 开发",
     "period": "数字产品",
     "featured": true,
     "featuredOrder": 3,
     "media": [
       {
-        "src": "assets/spatial-storage-overview.jpg",
-        "alt": "Spatial Storage 的收纳树、二维平面与内容面板",
-        "caption": "收纳树与二维空间工作区"
+        "src": "assets/spatial-storage-home-3d-v2.webp",
+        "alt": "新版 Spatial Storage 的家庭样例 3D 场景、搜索栏和视图工具条",
+        "caption": "新版家庭样例 · 3D 空间总览 / 实际应用截图",
+        "kind": "应用截图",
+        "width": 1600,
+        "height": 1000
       },
       {
-        "src": "assets/spatial-storage-3d.jpg",
-        "alt": "Spatial Storage 的三维房间与家具预览",
-        "caption": "三维空间总览"
+        "src": "assets/spatial-storage-home-2d-v2.webp",
+        "alt": "家庭样例的二维平面与右侧收纳内容面板",
+        "caption": "2D 布局 · 空间对象与收纳内容并置",
+        "kind": "应用截图",
+        "width": 1600,
+        "height": 1000
+      },
+      {
+        "src": "assets/spatial-storage-search-mobile-v2.webp",
+        "alt": "手机视口中搜索 Batteries 并显示完整收纳路径和2D、3D定位按钮",
+        "caption": "搜索物品 · 收纳路径与空间定位入口",
+        "kind": "应用截图",
+        "layout": "portrait",
+        "width": 529,
+        "height": 827
+      },
+      {
+        "src": "assets/spatial-storage-locate-mobile-v2.webp",
+        "alt": "手机视口中定位到书柜第三层的电池并显示物品位置说明",
+        "caption": "定位所在层板 · 柜内摆放位置为示意",
+        "kind": "应用截图",
+        "layout": "portrait",
+        "width": 529,
+        "height": 827
       }
     ],
     "question": "物品既属于收纳层级，又位于真实空间中，怎样快速找到它？",
-    "context": "项目将家、房间、家具、抽屉、收纳盒与物品组织成可搜索的层级，并在同一工作区提供二维平面与三维预览。",
+    "context": "从“东西在哪里”出发，先用家、房间、家具、层板、抽屉、收纳盒与物品组织逻辑位置，再通过空间绑定把搜索结果定位到 2D 或 3D 视图中的家具。新版以可编辑的空间场景为入口，同时保留收纳树与内容面板。",
     "constraints": [
       "收纳层级与空间位置需要各自清晰",
       "查找物品应优先于复杂的建模操作",
@@ -537,11 +725,21 @@ window.PORTFOLIO_PROJECTS = [
         "收纳树中的层级变化与空间中的摆放分别编辑。"
       ],
       [
+        "让搜索结果回到空间",
+        "搜索名称、备注和标签后，在 2D / 3D 中定位所在家具；进入层板或抽屉继续查看内容。"
+      ],
+      [
+        "共享摆放约束",
+        "2D 与 3D 共用网格、贴墙与碰撞校验，减少切换视图后的摆放歧义。"
+      ],
+      [
         "让数据由用户掌控",
         "采用浏览器本地存储并提供 JSON 导入与导出。"
       ]
     ],
-    "outcome": "Web 原型包含项目切换、多级收纳树、搜索、模板、JSON 导入导出以及二维和三维空间工作区。"
+    "outcome": "本地 Web MVP 已具备项目切换、收纳树、搜索、语义模板、IndexedDB 持久化、带布局的 JSON 导入导出、2D / 3D 空间编辑及物品空间定位。当前截图展示可编辑家庭样例，不代表已有线上用户或云服务。",
+    "status": "本地 Web MVP · 2026.10 更新",
+    "evidenceNote": "截图采集于 2026 年 10 月 4 日的实际本地应用，使用内置家庭样例。柜内物品摆放为示意；云同步、AI 户型识别与 Home Assistant 接入仍属于后续方向。"
   }
 ];
 

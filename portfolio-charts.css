@@ -34,3 +34,7 @@
 @media(max-width:900px){.data-showcase-head,.dashboard-chapter-head{grid-template-columns:1fr;gap:16px}.lieflat-grid{grid-template-columns:1fr}}
 @media(max-width:700px){.data-showcase{padding-top:4px}.data-showcase-head{padding-top:19px}.data-showcase-head h2{font-size:35px}.dashboard-nav{display:grid;grid-template-columns:1fr;gap:6px}.dashboard-nav a{padding:9px 12px}.dashboard-chapter{padding-top:42px}.dashboard-chapter-head h3{font-size:30px}.lf-card{padding:20px;border-radius:15px}.lf-card h3{font-size:26px}.lf-sub{font-size:10px}.lf-card svg{max-height:none}.lf-preview{padding:0 3% 8%}}
 @media(prefers-reduced-motion:reduce){.lf-card svg .pop,.lf-preview svg .pop,.lf-card svg .fade,.lf-preview svg .fade,.lf-card svg .draw,.lf-preview svg .draw{animation:none!important;stroke-dashoffset:0!important}}
+/* Keep data encodings pale where needed, but make every textual label readable. */
+.lf-card svg text,.lf-preview svg text{fill:#4a4944}
+.lf-template,.lf-src,.lf-preview .visual-caption{color:#61645d}
+.lf-card{border-radius:14px}

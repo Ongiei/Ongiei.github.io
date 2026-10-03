@@ -25,3 +25,9 @@
 三维库的许可证见 `vendor/THREE-LICENSE.txt`。图表使用的 Lieflat Charts 资源及原许可证保留在 `assets/lieflat/`。
 
 发布到 EdgeOne 的站点使用 `ongiei.work`；GitHub Pages 保留为备份入口。部署说明见 [DEPLOY.md](DEPLOY.md)。
+
+## 本次素材与质量复查
+
+2026-10-04 更新：新版 Spatial Storage 实际截图、九张建筑分析重绘、三张硬件方案渲染与六方式六张工作照片；修复案例证据标注、索引选择状态和手机预览。详见 `REVIEW_2026-10-04.md`、`IMAGE_ASSETS_2026-10-04.md`。
+
+已有 Playwright 运行时可执行 `node scripts/check-portfolio.cjs`（用 `PLAYWRIGHT_MODULE_PATH` 指向已有模块，用 `CHROME_PATH` 指向已有 Chrome，默认使用 Chrome channel）。无需为静态站新增全局依赖。检查输出和发布工具放在被忽略的 `output/` 内。

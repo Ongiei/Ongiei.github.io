@@ -23,7 +23,7 @@
         { id: 'staying', eyebrow: '03 / 主动护眼与保持', title: '从提醒触发走到长期保持。', note: '提醒是否打开、是否触发与首次开启后是否保持，是三个不同问题。' }
       ],
       cards: [
-        { id: 'eye-days', chapter: 'reach', template: 'F2', title: '页面触达在 30 天中如何变化？', sub: '页面访问指数 · 一点代表一天 · 空心点为周末', src: '观察周期 / 近 30 天', draw: drawEyeDays },
+        { id: 'eye-days', chapter: 'reach', template: 'F2', title: '页面触达在 30 天中如何变化？', sub: '页面访问指数 · 一点代表一天 · 空心点为周末', src: '示例观察窗 / 30 天', draw: drawEyeDays },
         { id: 'eye-funnel', chapter: 'reach', template: 'L13', title: '一次会话里，流失发生在哪一步？', sub: '页面曝光 → 一级功能交互 → 开启成功 · 同次会话顺序', src: '口径 / 仅统计本次会话的连续行为', draw: drawEyeFunnel },
         { id: 'eye-rates', chapter: 'settings', template: 'F6', title: '曾经开启与期末仍开启，需要分开读。', sub: '浅色：周期内开启 · 深色：周期末仍开启 · 分母为各功能支持设备', src: '口径 / 两种开启率不直接推算关闭人数', draw: drawEyeRates },
         { id: 'eye-hundred', chapter: 'settings', template: 'L14', title: '定时配置，用户主要修改哪一端？', sub: '一枚点代表 1% · 设置完成且保持开启的用户 · 四类互斥', src: '口径 / 定时设置偏好合计 100%', draw: drawEyeHundred },
@@ -57,7 +57,7 @@
         { id: 'diagnosis', eyebrow: '03 / 场景下钻', title: '把异常带回发生时的状态。', note: '对照调整前后亮度与当时的应用场景，再检查缺失事件或版本断层。' }
       ],
       cards: [
-        { id: 'device-lineage', chapter: 'sequence', template: 'L11', title: '同一时刻，哪些状态可以被对齐？', sub: '每条纵线是一类事件 · ● 状态发生 · ○ 后续调整 · 09:00–09:30', src: '阅读方法 / 沿横向时间线比较不同事件轨', draw: drawDeviceLineage },
+        { id: 'device-lineage', chapter: 'sequence', template: 'L11', title: '同一时刻，哪些状态可以被对齐？', sub: '每条横轨是一类事件 · ● 状态发生 · ○ 后续调整 · 09:00–09:30', src: '阅读方法 / 沿横向时间线比较不同事件轨', draw: drawDeviceLineage },
         { id: 'device-mix', chapter: 'patterns', template: 'F4', title: '一段会话里，哪些事件最常出现？', sub: '一根刻度代表 1% 事件 · 按事件类别互斥归类', src: '口径 / 事件占比合计 100%', draw: drawDeviceMix },
         { id: 'device-heat', chapter: 'patterns', template: 'F10', title: '高密度片段集中在哪些时段？', sub: '星期 × 小时 · 点面积表示记录到的事件强度', src: '观察 / 密集不等于异常，需进入具体片段', draw: s => drawDotHeat(s, 'device') },
         { id: 'device-app', chapter: 'diagnosis', template: 'F5', title: '回到前台应用，看会话花在何处。', sub: '一根刻度代表 1% 的前台亮屏时长 · 应用类别互斥', src: '口径 / 前台亮屏时长合计 100%', draw: drawDeviceApps },
@@ -362,7 +362,7 @@
 
   function chartCard(card, index) {
     const viewBox = card.id === 'device-lineage' ? '0 0 400 340' : '0 0 400 320';
-    return `<section class="lf-card"><p class="lf-template">观察 ${String(index + 1).padStart(2, '0')}</p><h3>${card.title}</h3><div class="lf-sub">${card.sub}</div><svg id="${card.id}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${card.title} ${card.sub}"></svg><div class="lf-src">${card.src}</div></section>`;
+    return `<section class="lf-card"><p class="lf-template">观察 ${String(index + 1).padStart(2, '0')}</p><h3>${card.title}</h3><div class="lf-sub">${card.sub}</div><svg id="${card.id}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${card.title} ${card.sub}"></svg><div class="lf-src">模拟数据 · ${card.src}</div></section>`;
   }
 
   function showcase(project) {
@@ -373,7 +373,7 @@
       const cards = def.cards.filter(card => card.chapter === chapter.id);
       return `<section class="dashboard-chapter" id="dash-${chapter.id}" aria-labelledby="dash-heading-${chapter.id}"><div class="dashboard-chapter-head"><div><p class="small-label">${chapter.eyebrow}</p><h3 id="dash-heading-${chapter.id}">${chapter.title}</h3></div><p>${chapter.note}</p></div><div class="lieflat-grid ${cards.length === 1 ? 'single' : ''}">${cards.map(card => chartCard(card, def.cards.indexOf(card))).join('')}</div></section>`;
     }).join('');
-    return `<section class="data-showcase section-shell" aria-label="${project.title}分析看板"><div class="data-showcase-head"><div><p class="small-label">分析看板 / CASE STUDY</p><h2>${def.heading}</h2></div><p>${def.intro}</p></div><nav class="dashboard-nav" aria-label="本看板章节">${nav}</nav>${chapters}</section>`;
+    return `<section class="data-showcase section-shell" aria-label="${project.title}分析看板"><div class="data-showcase-head"><div><p class="small-label">分析看板 / CASE STUDY</p><h2>${def.heading}</h2></div><p>${def.intro}</p></div><p class="dashboard-evidence">本页数值为模拟数据，用于演示分析方法与统计口径；不代表真实业务结果。</p><nav class="dashboard-nav" aria-label="本看板章节">${nav}</nav>${chapters}</section>`;
   }
 
   function preview(project) {
@@ -382,7 +382,7 @@
     const card = def.cards[0];
     const id = `preview-${project.slug}-${++previewCount}`;
     const viewBox = card.id === 'device-lineage' ? '0 0 400 340' : '0 0 400 320';
-    return `<div class="visual lf-preview" role="img" aria-label="${project.title}图表预览"><svg id="${id}" data-lf-slug="${project.slug}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg><span class="visual-caption">数据分析 / 看板章节</span></div>`;
+    return `<div class="visual lf-preview" role="img" aria-label="${project.title}图表预览"><svg id="${id}" data-lf-slug="${project.slug}" viewBox="${viewBox}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg><span class="visual-caption">分析结构 / 模拟数据</span></div>`;
   }
 
   function mount(projectSlug) {

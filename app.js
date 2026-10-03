@@ -3,12 +3,26 @@ const collectionOrder = ["hardware", "data", "research", "architecture"];
 const collections = [...(window.PORTFOLIO_COLLECTIONS || [])].sort((a, b) => collectionOrder.indexOf(a.id) - collectionOrder.indexOf(b.id));
 const page = document.body.dataset.page;
 
+function imageMarkup(item, loading = 'lazy') {
+  const dimensions = item.width && item.height ? `width="${item.width}" height="${item.height}"` : '';
+  return `<img src="${item.src}" alt="${item.alt}" ${dimensions} loading="${loading}" decoding="async" />`;
+}
+function mediaCaption(item) {
+  return `${item.caption}${item.original ? ` <a href="${item.original}" target="_blank" rel="noopener noreferrer">查看原始图 ↗</a>` : item.images ? item.images.map((src, i) => ` <a href="${src}" target="_blank" rel="noopener noreferrer">查看第 ${i + 1} 页 ↗</a>`).join('') : ''}`;
+}
+function galleryFigure(item) {
+  return `<figure class="gallery-figure ${item.layout || ''}"><a class="media-open" href="${item.src}" target="_blank" rel="noopener noreferrer" aria-label="放大查看：${item.alt}">${imageMarkup(item)}</a><figcaption>${mediaCaption(item)}</figcaption></figure>`;
+}
+function evidenceNote(project) {
+  if (!project.evidenceNote) return '';
+  return `<div class="case-evidence section-shell"><strong>${project.status}</strong><p>${project.evidenceNote}</p></div>`;
+}
+
 function projectVisual(project, compact = false) {
   if (window.LIEFLAT_PORTFOLIO?.has(project.slug)) return window.LIEFLAT_PORTFOLIO.preview(project);
-  if (project.visualType === 'terminal') return `<figure class="visual terminal-visual ${compact ? 'compact' : ''}"><div class="terminal-visual-head"><span>家庭语音触控终端</span><span>0→1 / HARDWARE PRODUCT</span></div><div class="terminal-visual-center"><div><span>SCENE</span><strong>家庭控制</strong></div><img src="${project.media[0].src}" alt="${project.media[0].alt}" loading="${compact ? 'lazy' : 'eager'}" /><div><span>DELIVERY</span><strong>整机导入</strong></div></div><figcaption>产品定义 <span>→</span> 系统方案 <span>→</span> 样机集成</figcaption></figure>`;
   if (project.media?.length) {
     const item = project.media[0];
-    return `<figure class="visual visual-photo ${compact ? 'compact' : ''}"><img src="${item.src}" alt="${item.alt}" loading="${compact ? 'lazy' : 'eager'}" /><figcaption class="visual-caption">${item.caption}</figcaption></figure>`;
+    return `<figure class="visual visual-photo ${compact ? 'compact' : ''}">${compact ? imageMarkup(item) : `<a class="media-open" href="${item.src}" target="_blank" rel="noopener noreferrer" aria-label="放大查看：${item.alt}">${imageMarkup(item, 'eager')}</a>`}<figcaption class="visual-caption">${compact ? item.caption : mediaCaption(item)}</figcaption></figure>`;
   }
   return '';
 }
@@ -24,8 +38,8 @@ function domainLink(collection) {
 
 function architectureStory(project) {
   if (!project.architectureSections) return '';
-  const chapters = project.architectureSections.map((chapter, index) => `<section class="architecture-chapter" aria-labelledby="architecture-chapter-${index}"><div class="architecture-chapter-copy"><p class="small-label">${chapter.label}</p><h3 id="architecture-chapter-${index}">${chapter.title}</h3><p>${chapter.text}</p></div><div class="architecture-chapter-images">${chapter.images.map(imageIndex => { const item = project.media[imageIndex]; const media = item.images ? `<div class="architecture-spread">${item.images.map((src, page) => `<img src="${src}" alt="${item.alt}（${page + 1}）" loading="lazy" />`).join('')}</div>` : `<img src="${item.src}" alt="${item.alt}" loading="lazy" />`; return `<figure class="architecture-figure ${item.layout || 'wide'}">${media}<figcaption>${item.caption}</figcaption></figure>`; }).join('')}</div></section>`).join('');
-  return `<div class="architecture-story section-shell" aria-label="方案图像与分析"><div class="architecture-story-heading"><p class="small-label">方案图册</p><h2>从场地判断到空间表现</h2><p>以关键分析图和空间视角，阅读方案形成的过程。</p></div>${chapters}</div>`;
+  const chapters = project.architectureSections.map((chapter, index) => `<section class="architecture-chapter" aria-labelledby="architecture-chapter-${index}"><div class="architecture-chapter-copy"><p class="small-label">${chapter.label}</p><h3 id="architecture-chapter-${index}">${chapter.title}</h3><p>${chapter.text}</p></div><div class="architecture-chapter-images">${chapter.images.map(imageIndex => { const item = project.media[imageIndex]; const media = item.images ? `<div class="architecture-spread">${item.images.map((src, page) => `<img src="${src}" alt="${item.alt}（${page + 1}）" loading="lazy" />`).join('')}</div>` : `<a class="media-open" href="${item.src}" target="_blank" rel="noopener noreferrer" aria-label="放大查看：${item.alt}">${imageMarkup(item)}</a>`; return `<figure class="architecture-figure ${item.layout || 'wide'}">${media}<figcaption>${mediaCaption(item)}</figcaption></figure>`; }).join('')}</div></section>`).join('');
+  return `<div id="project-media" class="architecture-story section-shell" aria-label="方案图像与分析"><div class="architecture-story-heading"><p class="small-label">方案图册</p><h2>从场地判断到空间表现</h2><p>以分析示意和方案效果图阅读设计关系；原始图用于核对图纸信息。点击图像可放大查看。</p></div>${chapters}</div>`;
 }
 
 function productStory(project) {
@@ -49,18 +63,20 @@ function renderProject(project) {
   document.title = `${project.title} · 弓弼飞`;
   const constraints = project.constraints.map((item, i) => `<li><span>${String(i + 1).padStart(2, '0')}</span>${item}</li>`).join('');
   const decisions = project.decisions.map(([title, description], i) => `<div class="decision"><span>${String(i + 1).padStart(2, '0')}</span><div><h3>${title}</h3><p>${description}</p></div></div>`).join('');
-  const gallery = project.architectureSections ? architectureStory(project) : project.media?.length > 1 ? `<div class="project-gallery section-shell" aria-label="更多项目图片">${project.media.slice(1).map(item => `<figure><img src="${item.src}" alt="${item.alt}" loading="lazy" /><figcaption>${item.caption}</figcaption></figure>`).join('')}</div>` : '';
+  const gallery = project.architectureSections ? architectureStory(project) : project.media?.length > 1 ? `<section id="project-media" class="case-media section-shell" aria-labelledby="project-media-title"><div class="case-media-head"><h2 id="project-media-title">${project.slug === 'spatial-storage' ? '从查找物品，到定位空间。' : project.slug === 'cm5-home-gateway' ? '方案形态与实物工作记录。' : '早期方案留档。'}</h2><p>点击图像可放大查看。渲染、实拍与应用截图分别标注。</p></div><div class="project-gallery">${project.media.slice(1).map(galleryFigure).join('')}</div></section>` : '';
   const cover = window.LIEFLAT_PORTFOLIO?.has(project.slug) ? window.LIEFLAT_PORTFOLIO.showcase(project) : `<div class="project-cover ${project.visualType === 'terminal' ? 'terminal-cover' : ''}">${projectVisual(project)}</div>`;
   const role = project.role ? `<div class="project-meta"><div><span>角色</span><strong>${project.role}</strong></div></div>` : '';
   const outcomeLink = project.outcome ? '<a href="#outcome">项目呈现</a>' : '';
-  const outcomeSection = project.outcome ? `<section id="outcome" class="project-section"><p class="small-label">项目呈现</p><h2>从方案走向可见的作品。</h2><p>${project.outcome}</p></section>` : '';
-  return `<div class="project-page ${project.architectureSections ? 'architecture-page' : ''}"><header class="project-hero section-shell"><a class="back-link" href="work.html?category=${project.category}">← 返回${project.categoryLabel}项目集合</a><div class="project-head"><div><p class="small-label">${project.categoryLabel} / ${project.period}</p><h1>${project.title}</h1><p class="project-subtitle">${project.subtitle}</p></div><div class="project-index">${project.index}<span>/ ${String(projects.length).padStart(2, '0')}</span></div></div>${role}</header>${dataLens(project)}${cover}${productStory(project)}${gallery}<div class="project-body section-shell"><aside class="project-toc" aria-label="案例目录"><span>本页内容</span>${project.productStory ? '<a href="#product-story">产品与系统</a>' : ''}<a href="#challenge">问题与背景</a><a href="#constraints">设计约束</a><a href="#decisions">关键决策</a>${outcomeLink}</aside><div class="project-article"><section id="challenge" class="project-section"><p class="small-label">问题与背景</p><h2>${project.question}</h2><p>${project.context}</p></section><section id="constraints" class="project-section"><p class="small-label">设计约束</p><h2>方案需要回应的条件</h2><ol class="constraint-list">${constraints}</ol></section><section id="decisions" class="project-section"><p class="small-label">关键决策</p><h2>从问题走向方案。</h2><div class="decision-list">${decisions}</div></section>${outcomeSection}</div></div>${relatedCases(project)}<div class="next-project section-shell"><span>继续浏览</span><a href="work.html?category=${project.category}">查看同领域项目 <span>↗</span></a></div></div>`;
+  const outcomeSection = project.outcome ? `<section id="outcome" class="project-section"><p class="small-label">项目呈现</p><h2>${project.category === 'data' ? '方法产出与展示边界' : project.slug === 'spatial-storage' ? '当前可用的产品范围' : '项目产出与当前状态'}</h2><p>${project.outcome}</p></section>` : '';
+  return `<div class="project-page ${project.architectureSections ? 'architecture-page' : ''}"><header class="project-hero section-shell"><a class="back-link" href="work.html?category=${project.category}">← 返回${project.categoryLabel}项目集合</a><div class="project-head"><div><p class="small-label">${project.categoryLabel} / ${project.period}</p><h1>${project.title}</h1><p class="project-subtitle">${project.subtitle}</p></div><div class="project-index">${project.index}<span>/ ${String(projects.length).padStart(2, '0')}</span></div></div>${role}</header>${evidenceNote(project)}${dataLens(project)}${cover}${productStory(project)}<div class="project-body section-shell"><aside class="project-toc" aria-label="案例目录"><span>本页内容</span>${project.productStory ? '<a href="#product-story">产品与系统</a>' : ''}<a href="#challenge">问题与背景</a><a href="#constraints">设计约束</a><a href="#decisions">关键决策</a>${outcomeLink}${gallery ? '<a href="#project-media">图像与工作记录</a>' : ''}</aside><div class="project-article"><section id="challenge" class="project-section"><p class="small-label">问题与背景</p><h2>${project.question}</h2><p>${project.context}</p></section><section id="constraints" class="project-section"><p class="small-label">设计约束</p><h2>方案需要回应的条件</h2><ol class="constraint-list">${constraints}</ol></section><section id="decisions" class="project-section"><p class="small-label">关键决策</p><h2>从问题走向方案。</h2><div class="decision-list">${decisions}</div></section>${outcomeSection}</div></div>${gallery}${relatedCases(project)}<div class="next-project section-shell"><span>继续浏览</span><a href="work.html?category=${project.category}">查看同领域项目 <span>↗</span></a></div></div>`;
 }
 
 function setupNav() {
   const button = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
   if (!button || !nav) return;
+  nav.id = 'site-navigation'; button.setAttribute('aria-controls', nav.id);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && nav.classList.contains('open')) { nav.classList.remove('open'); button.setAttribute('aria-expanded', 'false'); button.setAttribute('aria-label', '打开菜单'); button.focus(); } });
   button.addEventListener('click', () => {
     const open = button.getAttribute('aria-expanded') !== 'true';
     button.setAttribute('aria-expanded', String(open));
@@ -85,7 +101,7 @@ if (page === 'work') {
   const list = document.getElementById('work-list');
   const detail = document.getElementById('work-detail');
   const filters = [...document.querySelectorAll('.filter')];
-  let selectedSlug = null;
+  let selectedSlug = new URLSearchParams(location.search).get('slug');
   const displayOrder = ['voice-touch-terminal', 'cm5-home-gateway', 'eye-care-dashboard', 'auto-backlight-dashboard', 'device-timeline', 'spatial-storage', 'dezhou-exhibition-center', 'zhengzhou-exhibition-center', 'longchang-civic-center'];
   const ordered = [...projects].sort((a, b) => displayOrder.indexOf(a.slug) - displayOrder.indexOf(b.slug));
   const detailMarkup = project => `<div class="detail-top"><span>${project.index} / ${String(projects.length).padStart(2, '0')} · ${project.categoryLabel}</span><span>${project.period}</span></div><h2>${project.title}</h2><p class="detail-question">${project.question}</p><div class="detail-media category-${project.category}">${projectVisual(project, true)}</div><p class="detail-summary">${project.summary}</p><a class="detail-cta" href="project.html?slug=${project.slug}">阅读完整案例 <span aria-hidden="true">↗</span></a>`;
@@ -93,15 +109,18 @@ if (page === 'work') {
     const project = projects.find(item => item.slug === slug);
     if (!project) return;
     selectedSlug = slug;
+    detail.setAttribute('aria-label', `当前项目预览：${project.title}`);
     detail.innerHTML = detailMarkup(project);
-    list.querySelectorAll('.index-row').forEach(row => row.setAttribute('aria-selected', String(row.dataset.slug === slug)));
+    list.querySelectorAll('.index-row').forEach(row => row.setAttribute('aria-pressed', String(row.dataset.slug === slug)));
     window.LIEFLAT_PORTFOLIO?.mountPreviews(detail);
+    const url = new URL(location.href); url.searchParams.set('slug', slug); history.replaceState(null, '', url);
+    document.getElementById('work-selection-status').textContent = `当前预览：${project.title}`;
   };
   const applyFilter = category => {
     const visible = category === 'all' ? ordered : ordered.filter(item => item.category === category);
-    list.innerHTML = visible.map(project => `<button class="index-row" type="button" data-slug="${project.slug}" aria-selected="false"><span class="index-num">${project.index}</span><span class="index-title">${project.title}<small>${project.subtitle}</small></span><span class="index-category">${project.categoryLabel}</span><span class="index-arrow" aria-hidden="true">↗</span></button>`).join('');
+    list.innerHTML = visible.map(project => `<button class="index-row" type="button" data-slug="${project.slug}" aria-pressed="false"><span class="index-num">${project.index}</span><span class="index-title">${project.title}<small>${project.subtitle}</small></span><span class="index-category">${project.categoryLabel}</span><span class="index-arrow" aria-hidden="true">↗</span></button>`).join('');
     list.querySelectorAll('.index-row').forEach(row => {
-      row.addEventListener('click', () => select(row.dataset.slug));
+      row.addEventListener('click', () => { select(row.dataset.slug); if (matchMedia('(max-width:760px)').matches) detail.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion:reduce)').matches ? 'instant' : 'smooth'}); });
       row.addEventListener('focus', () => select(row.dataset.slug));
       row.addEventListener('keydown', event => {
         if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;

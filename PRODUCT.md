@@ -33,7 +33,7 @@ Static web portfolio on Tencent EdgeOne, with GitHub Pages as a backup.
 
 ## Evidence on Hand
 
-现有项目数据、建筑图册、终端早期方案草图、三个数据看板章节与 Spatial Storage 界面图均在仓库内。终端草图仅作为方案过程材料，不承担成果证明。
+现有项目数据、建筑图册、终端早期外观渲染、三个数据看板章节与 Spatial Storage 界面图均在仓库内。终端渲染仅作为方案过程材料；六方式网关与移动平台工作照片作为实物过程记录，不能据此推定配置与结果。
 
 ## Product Principles
 
