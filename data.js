@@ -13,7 +13,7 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/hardware/home-gateway-studio-v2.webp",
         "alt": "家庭网关外观方案的白色盒体渲染图",
-        "caption": "家庭网关 · 外观方案 AI 辅助渲染",
+        "caption": "家庭网关 · 外观方案 渲染",
         "kind": "方案渲染",
         "original": "assets/hardware/home-gateway.png",
         "width": 1672,
@@ -22,51 +22,15 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/hardware/cm5-gateway-studio-v2.webp",
         "alt": "带 Zigbee 的 CM5 家庭网关外观方案渲染图",
-        "caption": "CM5 + Zigbee 外观方案 · AI 辅助渲染",
+        "caption": "CM5 + Zigbee 外观方案 · 渲染",
         "kind": "方案渲染",
         "original": "assets/hardware/cm5-gateway-zigbee.png",
         "width": 1672,
         "height": 941
-      },
-      {
-        "src": "assets/work/gateway-enclosures.webp",
-        "alt": "两种颜色的网关外壳及对应板卡",
-        "caption": "六方式工作记录 · 外壳与板卡实拍",
-        "layout": "photo",
-        "kind": "实物照片",
-        "width": 1600,
-        "height": 1200
-      },
-      {
-        "src": "assets/work/gateway-components.webp",
-        "alt": "拆分展示的网关外壳与电路板",
-        "caption": "六方式工作记录 · 结构与板卡拆分",
-        "layout": "photo",
-        "kind": "实物照片",
-        "width": 1200,
-        "height": 1600
-      },
-      {
-        "src": "assets/work/gateway-assembly.webp",
-        "alt": "网关内部板卡堆叠与支撑柱装配",
-        "caption": "六方式工作记录 · 装配结构",
-        "layout": "photo",
-        "kind": "实物照片",
-        "width": 960,
-        "height": 1280
-      },
-      {
-        "src": "assets/work/gateway-open-board.webp",
-        "alt": "打开外壳的网关板卡、散热与连接线",
-        "caption": "六方式工作记录 · 开壳观察",
-        "layout": "photo",
-        "kind": "实物照片",
-        "width": 1200,
-        "height": 1600
       }
     ],
-    "question": "如何为家庭中的多类设备建立清晰的连接入口？",
-    "context": "CM5 家庭网关包含基础外观方案与 Zigbee 版本。项目从设备接入、家庭摆放和日常维护出发，讨论网关作为家庭连接中枢的产品形态。",
+    "question": "连接家庭设备的统一入口",
+    "context": "比较基础版与 Zigbee 版的接口布局、家庭摆放和维护方式。",
     "constraints": [
       "同时考虑多类设备的接入方式",
       "外观与接口布局适应家庭安装环境",
@@ -82,9 +46,9 @@ window.PORTFOLIO_PROJECTS = [
         "并列展示两种方案，突出产品系列中的延续与变化。"
       ]
     ],
-    "outcome": "呈现家庭网关的两种外观方案，并补充归档中的外壳、板卡与装配实拍。渲染图说明产品形态，实物照片提供工作过程的观察依据。",
+    "outcome": "完成两种网关外观方案。",
     "status": "外观方案与样机工作记录",
-    "evidenceNote": "前两张为外观方案渲染，后续为六方式项目归档中的网关实拍。照片用于展示外壳、板卡和装配过程，不据此推定具体配置或验证结果。"
+    "evidenceNote": ""
   },
   {
     "slug": "voice-touch-terminal",
@@ -103,7 +67,7 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/hardware/voice-touch-terminal-studio-v2.webp",
         "alt": "家庭语音触控终端概念渲染：白色面板、黑色屏幕与橙色按钮",
-        "caption": "外观方案 · AI 辅助渲染，非量产实拍",
+        "caption": "外观方案 · 方案渲染",
         "kind": "方案渲染",
         "width": 1672,
         "height": 941
@@ -111,14 +75,14 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/hardware/voice-touch-terminal-86.png",
         "alt": "家庭语音触控终端早期外观方案的原始渲染图",
-        "caption": "早期外观方案 · 原始渲染留档",
+        "caption": "早期外观方案",
         "kind": "原始方案",
         "width": 900,
         "height": 700
       }
     ],
-    "question": "如何把家庭场景中的语音与触控需求，定义为可集成、可交付的终端产品？",
-    "context": "这是一项从需求定义开始的整机产品实践。我负责梳理家庭使用场景与终端能力，形成产品方案，并推进 MCU、显示、通信等选型与样机集成，进入小批量生产导入。",
+    "question": "把语音与触控整合为家庭控制终端",
+    "context": "负责需求定义、MCU / 显示 / 通信选型，推进样机集成与小批量导入。",
     "constraints": [
       "语音与触控需要共同服务于家庭设备控制场景",
       "整机方案要同时考虑 MCU、显示、通信与成本约束",
@@ -127,37 +91,20 @@ window.PORTFOLIO_PROJECTS = [
     "decisions": [
       [
         "从家庭场景定义能力",
-        "先确定用户如何发起控制、如何确认设备响应，再把需求转成终端能力与交互边界。"
+        "明确控制入口与设备反馈。"
       ],
       [
         "整机选型与方案收敛",
-        "围绕 MCU、显示、通信方式及 BOM 进行方案权衡，让功能目标与实现条件对应。"
+        "权衡 MCU、显示、通信和 BOM。"
       ],
       [
         "从样机推进到导入",
-        "协调样机集成与问题收敛，推动方案进入小批量生产导入。"
+        "跟进集成问题，推进小批量导入。"
       ]
     ],
-    "productStory": [
-      {
-        "label": "01 / 产品定义",
-        "title": "从家庭场景识别控制需求",
-        "text": "把用户触发、设备反馈与日常使用路径转化为终端需要具备的能力，确定语音和触控各自承担的交互任务。"
-      },
-      {
-        "label": "02 / 系统方案",
-        "title": "让能力与硬件条件对齐",
-        "text": "在 MCU、显示、通信与 BOM 之间做整机方案权衡，并把选择带入样机集成。"
-      },
-      {
-        "label": "03 / 交付推进",
-        "title": "从可演示样机走向可导入方案",
-        "text": "跟进集成问题与方案调整，使终端进入小批量生产导入。"
-      }
-    ],
-    "outcome": "完成家庭语音触控终端的整机产品方案，推进样机集成与小批量生产导入。",
+    "outcome": "完成整机方案、样机集成与小批量导入。",
     "status": "整机方案 / 样机集成 / 小批量导入",
-    "evidenceNote": "图像为基于早期外观方案重绘的概念渲染；屏幕内容仅为外观示意。"
+    "evidenceNote": ""
   },
   {
     "slug": "eye-care-dashboard",
@@ -175,8 +122,8 @@ window.PORTFOLIO_PROJECTS = [
       "观察路径 / 触达 → 开启 → 设置偏好 → 留存",
       "判断用途 / 定位入口、解释与持续使用环节"
     ],
-    "question": "怎样理解护眼功能从被看见到持续使用的全过程？",
-    "context": "在 OPPO 显示体验方向，护眼功能需要区分‘用户看到入口’‘主动开启’与‘持续使用’。看板沿页面访问、功能交互、开启状态、设置偏好与后续保持展开，为入口优化、功能解释和后续验证提供问题定位路径。",
+    "question": "从功能触达到持续使用",
+    "context": "区分入口访问、主动开启与持续使用，定位护眼功能的体验断点。",
     "constraints": [
       "区分触达、开启与实际生效的口径",
       "不同功能的观察窗口与支持设备范围需要一致",
@@ -197,8 +144,8 @@ window.PORTFOLIO_PROJECTS = [
       ]
     ],
     "status": "分析方法展示",
-    "evidenceNote": "图表使用模拟数据演示分析结构，不代表 OPPO 真实业务指标、已上线效果或用户轨迹。",
-    "outcome": "形成从产品问题到统计口径、观察维度与下钻路径的分析结构。公开页面展示方法与示例图表，未展示真实业务结果。"
+    "evidenceNote": "模拟数据 · 展示分析方法",
+    "outcome": "形成触达、转化与留存分析结构。"
   },
   {
     "slug": "auto-backlight-dashboard",
@@ -215,8 +162,8 @@ window.PORTFOLIO_PROJECTS = [
       "观察路径 / 环境光 → 屏幕亮度 → 手动干预",
       "判断用途 / 识别场景并为策略优化提供线索"
     ],
-    "question": "自动调节在什么场景下需要用户再次干预？",
-    "context": "自动背光的产品问题是：系统调节与用户预期在哪些场景出现偏差？看板从自动与手动模式的使用结构开始，再观察环境光和屏幕亮度的关系，并沿拖动事件追问前台应用与时间背景，为策略优化与问题复现提供线索。",
+    "question": "找到自动调节偏离预期的场景",
+    "context": "结合环境光、屏幕亮度和手动调整，定位策略偏差。",
     "constraints": [
       "环境光与屏幕亮度使用不同单位",
       "手动调整需要对应发生时的使用场景",
@@ -237,8 +184,8 @@ window.PORTFOLIO_PROJECTS = [
       ]
     ],
     "status": "分析方法展示",
-    "evidenceNote": "图表使用模拟数据演示分析结构，不代表 OPPO 真实业务指标、已上线效果或用户轨迹。",
-    "outcome": "形成从产品问题到统计口径、观察维度与下钻路径的分析结构。公开页面展示方法与示例图表，未展示真实业务结果。"
+    "evidenceNote": "模拟数据 · 展示分析方法",
+    "outcome": "形成使用模式、光照响应与干预分析结构。"
   },
   {
     "slug": "device-timeline",
@@ -255,8 +202,8 @@ window.PORTFOLIO_PROJECTS = [
       "观察路径 / 总体变化 → 设备片段 → 事件链",
       "判断用途 / 支持问题复现与跨事件定位"
     ],
-    "question": "跨越多条事件链的使用问题，怎样回到具体发生的过程？",
-    "context": "当整体指标出现波动时，产品判断还需要回到用户的具体使用过程。时间轴将设备状态、前台应用、亮度变化与系统事件放在同一坐标中，支持跨事件链定位和问题复现。",
+    "question": "还原一次异常体验的过程",
+    "context": "在统一时间轴上关联设备状态、应用、亮度与系统事件。",
     "constraints": [
       "不同事件的时间口径需要对齐",
       "总体趋势要能下钻到单次使用片段",
@@ -277,8 +224,8 @@ window.PORTFOLIO_PROJECTS = [
       ]
     ],
     "status": "分析方法展示",
-    "evidenceNote": "图表使用模拟数据演示分析结构，不代表 OPPO 真实业务指标、已上线效果或用户轨迹。",
-    "outcome": "形成从产品问题到统计口径、观察维度与下钻路径的分析结构。公开页面展示方法与示例图表，未展示真实业务结果。"
+    "evidenceNote": "模拟数据 · 展示分析方法",
+    "outcome": "形成从总体趋势下钻到事件片段的分析路径。"
   },
   {
     "slug": "dezhou-exhibition-center",
@@ -295,9 +242,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/dezhou-aerial-redraw.webp",
         "alt": "德州国际会展中心放射状场馆与城市水面关系鸟瞰",
-        "caption": "城市轴线与场馆鸟瞰 · 方案效果图 · AI 重绘",
+        "caption": "城市轴线与场馆鸟瞰 · 方案效果图",
         "layout": "wide",
-        "kind": "方案效果图 · AI 重绘",
+        "kind": "方案效果图",
         "original": "assets/architecture/dezhou-aerial.webp",
         "width": 1672,
         "height": 941
@@ -305,9 +252,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/dezhou-spatial-analysis-v2.webp",
         "alt": "六组展厅围合公共中心及城市入口的空间关系图",
-        "caption": "城市轴线、展厅单元与公共中心 · 分析示意 · AI 重绘",
+        "caption": "城市轴线、展厅单元与公共中心 · 分析示意",
         "layout": "diagram",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "original": "assets/architecture/dezhou-concept-axis.webp",
         "width": 1672,
         "height": 940
@@ -315,9 +262,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/dezhou-routes-analysis-v2.webp",
         "alt": "公共入口经中心大厅分配到六组展厅的流线关系图",
-        "caption": "公共到达与展厅外围动线 · 分析示意 · AI 重绘",
+        "caption": "公共到达与展厅外围动线 · 分析示意",
         "layout": "diagram",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "original": "assets/architecture/dezhou-circulation.webp",
         "width": 1672,
         "height": 941
@@ -343,9 +290,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/dezhou-interior-redraw.webp",
         "alt": "德州会展中心木质顶棚下的公共大厅",
-        "caption": "公共大厅 · 人行尺度 · 方案效果图 · AI 重绘",
+        "caption": "公共大厅 · 人行尺度 · 方案效果图",
         "layout": "wide",
-        "kind": "方案效果图 · AI 重绘",
+        "kind": "方案效果图",
         "original": "assets/architecture/dezhou-interior.webp",
         "width": 2106,
         "height": 747
@@ -354,16 +301,14 @@ window.PORTFOLIO_PROJECTS = [
     "architectureSections": [
       {
         "label": "01 / 场地",
-        "title": "先看场馆如何接入城市。",
-        "text": "城市轴线和公共入口进入建筑中心，展厅单元围绕这一核心展开。",
+        "title": "先看场馆如何接入城市",
         "images": [
           1
         ]
       },
       {
         "label": "02 / 组织",
-        "title": "从中心大厅理解展厅与流线。",
-        "text": "中心大厅承担到达与分配；展厅平面进一步展示空间在不同活动中的适配方式。",
+        "title": "从中心大厅理解展厅与流线",
         "images": [
           2,
           3
@@ -371,16 +316,15 @@ window.PORTFOLIO_PROJECTS = [
       },
       {
         "label": "03 / 体验",
-        "title": "从展厅跨度走向公共大厅。",
-        "text": "连续的展厅视角呈现大跨空间，公共大厅补足人在建筑中的尺度与氛围。",
+        "title": "从展厅跨度走向公共大厅",
         "images": [
           4,
           5
         ]
       }
     ],
-    "question": "大尺度会展设施，如何连接城市入口、展厅组织与公众体验？",
-    "context": "方案从城市轴线出发，将展馆单元、中央公共空间与到达流线组织在一起，并用鸟瞰、平面与室内视角说明空间体验。",
+    "question": "让会展空间连接城市",
+    "context": "沿城市轴线组织展厅与中心大厅，分开公共到达与展览流线。",
     "constraints": [
       "回应城市轴线和周边公共空间",
       "建立展厅单元与中央大厅之间的清晰关系",
@@ -401,7 +345,7 @@ window.PORTFOLIO_PROJECTS = [
       ]
     ],
     "status": "建筑概念方案",
-    "evidenceNote": "方案分析与空间表现；AI 重绘图用于说明设计关系，原始图可在图注中查看。"
+    "evidenceNote": ""
   },
   {
     "slug": "zhengzhou-exhibition-center",
@@ -417,9 +361,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/zhengzhou-aerial-redraw.webp",
         "alt": "郑州高新区会展中心方案一日景鸟瞰",
-        "caption": "方案一 · 场馆与屋顶公共空间 · 方案效果图 · AI 重绘",
+        "caption": "方案一 · 场馆与屋顶公共空间 · 方案效果图",
         "layout": "wide",
-        "kind": "方案效果图 · AI 重绘",
+        "kind": "方案效果图",
         "original": "assets/architecture/zhengzhou-aerial.webp",
         "width": 1491,
         "height": 1055
@@ -427,19 +371,19 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/zhengzhou-site-analysis-v2.webp",
         "alt": "郑州高新区会展中心场地周边条件分析",
-        "caption": "场地边界与周边城市资源 · 分析示意 · AI 重绘",
+        "caption": "场地边界与周边城市资源 · 分析示意",
         "layout": "diagram",
         "original": "assets/architecture/zhengzhou-site.webp",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "width": 1491,
         "height": 1055
       },
       {
         "src": "assets/architecture/zhengzhou-massing-analysis-v2.webp",
         "alt": "会展功能落位、体量塑形与城市互动的三步分析图",
-        "caption": "功能落位、空间塑形与城市互动 · 分析示意 · AI 重绘",
+        "caption": "功能落位、空间塑形与城市互动 · 分析示意",
         "layout": "diagram",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "original": "assets/architecture/zhengzhou-massing.webp",
         "width": 1672,
         "height": 941
@@ -447,9 +391,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/zhengzhou-program-analysis-v2.webp",
         "alt": "展览、公共大厅、会议与酒店的功能关系图",
-        "caption": "复合功能围绕公共大厅组织 · 分析示意 · AI 重绘",
+        "caption": "复合功能围绕公共大厅组织 · 分析示意",
         "layout": "diagram",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "original": "assets/architecture/zhengzhou-program.webp",
         "width": 1672,
         "height": 941
@@ -465,19 +409,19 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/zhengzhou-landscape-analysis-v2.webp",
         "alt": "场地边界与周边绿地之间的方向性连接示意",
-        "caption": "场地与周边绿地的连接 · 分析示意 / AI 重绘",
+        "caption": "场地与周边绿地的连接 · 分析示意",
         "layout": "diagram",
         "original": "assets/architecture/zhengzhou-landscape.webp",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "width": 1491,
         "height": 1055
       },
       {
         "src": "assets/architecture/zhengzhou-street-redraw.webp",
         "alt": "郑州高新区会展中心日间沿街透视",
-        "caption": "沿街视角 · 建筑与行人尺度 · 方案效果图 · AI 重绘",
+        "caption": "沿街视角 · 建筑与行人尺度 · 方案效果图",
         "layout": "wide",
-        "kind": "方案效果图 · AI 重绘",
+        "kind": "方案效果图",
         "original": "assets/architecture/zhengzhou-street.webp",
         "width": 1491,
         "height": 1055
@@ -486,16 +430,14 @@ window.PORTFOLIO_PROJECTS = [
     "architectureSections": [
       {
         "label": "01 / 判断",
-        "title": "用地与会展需求一起决定体量。",
-        "text": "区位、周边业态和展览需求共同约束场地中的建筑规模。",
+        "title": "用地与会展需求一起决定体量",
         "images": [
           1
         ]
       },
       {
         "label": "02 / 推演",
-        "title": "功能组合推动形态生成。",
-        "text": "展览、会议、酒店与公共空间在紧凑地块中组合；一张总图用于核对入口和总体布局。",
+        "title": "功能组合推动形态生成",
         "images": [
           2,
           3,
@@ -504,16 +446,15 @@ window.PORTFOLIO_PROJECTS = [
       },
       {
         "label": "03 / 呈现",
-        "title": "让城市界面与屋顶公共空间可见。",
-        "text": "绿地关系图说明场地与周边公共空间的连接意图，沿街视角补充建筑的城市界面；该分析图不用于证明屋顶细部。",
+        "title": "让城市界面与屋顶公共空间可见",
         "images": [
           5,
           6
         ]
       }
     ],
-    "question": "在有限用地中，如何兼顾展览、会议、酒店和城市公共空间？",
-    "context": "方案将展览、会议、酒店及公共空间组织在紧凑地块中，通过功能分析、总体布局与街道视角呈现建筑和城市的关系。",
+    "question": "在紧凑用地中组织复合功能",
+    "context": "以公共大厅连接展览、会议和酒店，兼顾城市入口与街道尺度。",
     "constraints": [
       "在有限地块上组合会展与配套功能",
       "分别组织公众到达与后勤物流",
@@ -534,7 +475,7 @@ window.PORTFOLIO_PROJECTS = [
       ]
     ],
     "status": "建筑概念方案",
-    "evidenceNote": "方案分析与空间表现；AI 重绘图用于说明设计关系，原始图可在图注中查看。"
+    "evidenceNote": ""
   },
   {
     "slug": "longchang-civic-center",
@@ -550,9 +491,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/longchang-courtyard-redraw.webp",
         "alt": "重坊叠韵方案的公共中庭与框景",
-        "caption": "公共中庭 · 天运楼框景 · 方案效果图 · AI 重绘",
+        "caption": "公共中庭 · 天运楼框景 · 方案效果图",
         "layout": "wide",
-        "kind": "方案效果图 · AI 重绘",
+        "kind": "方案效果图",
         "original": "assets/architecture/longchang-courtyard.webp",
         "width": 1491,
         "height": 1055
@@ -560,9 +501,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/longchang-axis-analysis-v2.webp",
         "alt": "天运楼、石牌坊与公共中庭之间的轴线关系",
-        "caption": "历史轴线进入公共中庭 · 分析示意 · AI 重绘",
+        "caption": "历史轴线进入公共中庭 · 分析示意",
         "layout": "diagram",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "original": "assets/architecture/longchang-axis.webp",
         "width": 1671,
         "height": 941
@@ -570,9 +511,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/longchang-massing-analysis-v2.webp",
         "alt": "建筑拆分为六个单元围合中庭的过程",
-        "caption": "六个单元围合中庭 · 分析示意 · AI 重绘",
+        "caption": "六个单元围合中庭 · 分析示意",
         "layout": "diagram",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "original": "assets/architecture/longchang-massing.webp",
         "width": 1672,
         "height": 941
@@ -580,9 +521,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/longchang-program-analysis-v2.webp",
         "alt": "公共中庭与两侧功能空间的联系",
-        "caption": "中庭连接两侧功能 · 分析示意 · AI 重绘",
+        "caption": "中庭连接两侧功能 · 分析示意",
         "layout": "diagram",
-        "kind": "分析示意 · AI 重绘",
+        "kind": "分析示意",
         "original": "assets/architecture/longchang-program.webp",
         "width": 1672,
         "height": 941
@@ -590,9 +531,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/longchang-aerial-redraw.webp",
         "alt": "重坊叠韵方案建筑与城市肌理的鸟瞰",
-        "caption": "鸟瞰 · 建筑与历史轴线 · 方案效果图 · AI 重绘",
+        "caption": "鸟瞰 · 建筑与历史轴线 · 方案效果图",
         "layout": "wide",
-        "kind": "方案效果图 · AI 重绘",
+        "kind": "方案效果图",
         "original": "assets/architecture/longchang-aerial.webp",
         "width": 1672,
         "height": 941
@@ -600,9 +541,9 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/architecture/longchang-street-redraw.webp",
         "alt": "重坊叠韵方案的沿街立面",
-        "caption": "沿街视角 · 街道尺度 · 方案效果图 · AI 重绘",
+        "caption": "沿街视角 · 街道尺度 · 方案效果图",
         "layout": "wide",
-        "kind": "方案效果图 · AI 重绘",
+        "kind": "方案效果图",
         "original": "assets/architecture/longchang-street.webp",
         "width": 1774,
         "height": 887
@@ -611,16 +552,14 @@ window.PORTFOLIO_PROJECTS = [
     "architectureSections": [
       {
         "label": "01 / 文脉",
-        "title": "历史轴线成为方案的起点。",
-        "text": "天运楼与石牌坊之间的城市关系，引导中庭的朝向与空间框景。",
+        "title": "历史轴线成为方案的起点",
         "images": [
           1
         ]
       },
       {
         "label": "02 / 生成",
-        "title": "拆分体量，形成公共中庭。",
-        "text": "六个单元围合共享空间，中庭连接两侧的办公与服务功能。",
+        "title": "拆分体量，形成公共中庭",
         "images": [
           2,
           3
@@ -628,16 +567,15 @@ window.PORTFOLIO_PROJECTS = [
       },
       {
         "label": "03 / 感受",
-        "title": "在鸟瞰与街景之间看建筑尺度。",
-        "text": "中庭是最有辨识度的空间体验；鸟瞰和沿街视角补充建筑与城市肌理的联系。",
+        "title": "在鸟瞰与街景之间看建筑尺度",
         "images": [
           4,
           5
         ]
       }
     ],
-    "question": "怎样把地方意象转化为可体验的空间？",
-    "context": "方案沿天运楼与石牌坊的历史轴线组织场地，将建筑拆分为六个单元，并以框景和顶部采光塑造公共中庭。",
+    "question": "让历史轴线进入公共中庭",
+    "context": "六个建筑单元围合中庭，以框景和顶部采光回应天运楼与石牌坊。",
     "constraints": [
       "回应场地中的历史轴线",
       "让中庭与两侧功能形成清晰联系",
@@ -658,7 +596,7 @@ window.PORTFOLIO_PROJECTS = [
       ]
     ],
     "status": "建筑概念方案",
-    "evidenceNote": "方案分析与空间表现；AI 重绘图用于说明设计关系，原始图可在图注中查看。"
+    "evidenceNote": ""
   },
   {
     "slug": "spatial-storage",
@@ -676,7 +614,7 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/spatial-storage-home-3d-v2.webp",
         "alt": "新版 Spatial Storage 的家庭样例 3D 场景、搜索栏和视图工具条",
-        "caption": "新版家庭样例 · 3D 空间总览 / 实际应用截图",
+        "caption": "新版家庭样例 · 3D 空间总览",
         "kind": "应用截图",
         "width": 1600,
         "height": 1000
@@ -708,8 +646,8 @@ window.PORTFOLIO_PROJECTS = [
         "height": 827
       }
     ],
-    "question": "物品既属于收纳层级，又位于真实空间中，怎样快速找到它？",
-    "context": "从“东西在哪里”出发，先用家、房间、家具、层板、抽屉、收纳盒与物品组织逻辑位置，再通过空间绑定把搜索结果定位到 2D 或 3D 视图中的家具。新版以可编辑的空间场景为入口，同时保留收纳树与内容面板。",
+    "question": "从搜索物品到定位空间",
+    "context": "以收纳树管理物品，通过 2D / 3D 视图定位所在家具与层板。",
     "constraints": [
       "收纳层级与空间位置需要各自清晰",
       "查找物品应优先于复杂的建模操作",
@@ -717,29 +655,21 @@ window.PORTFOLIO_PROJECTS = [
     ],
     "decisions": [
       [
-        "先建立可搜索的收纳树",
-        "用位置路径、名称、描述和标签定位物品。"
+        "搜索与定位",
+        "按名称、备注和标签查找，定位到家具与层板。"
       ],
       [
-        "区分逻辑归属与物理摆放",
-        "收纳树中的层级变化与空间中的摆放分别编辑。"
+        "布局编辑",
+        "2D / 3D 共用网格、贴墙和碰撞约束。"
       ],
       [
-        "让搜索结果回到空间",
-        "搜索名称、备注和标签后，在 2D / 3D 中定位所在家具；进入层板或抽屉继续查看内容。"
-      ],
-      [
-        "共享摆放约束",
-        "2D 与 3D 共用网格、贴墙与碰撞校验，减少切换视图后的摆放歧义。"
-      ],
-      [
-        "让数据由用户掌控",
-        "采用浏览器本地存储并提供 JSON 导入与导出。"
+        "本地保存",
+        "IndexedDB 持久化，JSON 导入与导出。"
       ]
     ],
-    "outcome": "本地 Web MVP 已具备项目切换、收纳树、搜索、语义模板、IndexedDB 持久化、带布局的 JSON 导入导出、2D / 3D 空间编辑及物品空间定位。当前截图展示可编辑家庭样例，不代表已有线上用户或云服务。",
+    "outcome": "本地 MVP：收纳管理、搜索定位、空间编辑、JSON 导入导出。",
     "status": "本地 Web MVP · 2026.10 更新",
-    "evidenceNote": "截图采集于 2026 年 10 月 4 日的实际本地应用，使用内置家庭样例。柜内物品摆放为示意；云同步、AI 户型识别与 Home Assistant 接入仍属于后续方向。"
+    "evidenceNote": "本地 MVP · 家庭样例"
   }
 ];
 
@@ -763,5 +693,94 @@ window.PORTFOLIO_COLLECTIONS = [
     "id": "research",
     "label": "独立产品",
     "description": "Spatial Storage 将收纳信息与空间视图连接成一个可操作的产品原型。"
+  }
+];
+
+window.PORTFOLIO_WORK_RECORDS = [
+  {
+    "title": "网关样机与板卡",
+    "media": [
+      {
+        "src": "assets/work/gateway-enclosures.webp",
+        "alt": "两种颜色的网关外壳及对应板卡",
+        "caption": "外壳与板卡",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/work/gateway-ports.webp",
+        "alt": "灰色和绿色外壳的接口侧面",
+        "caption": "外壳与接口",
+        "layout": "photo",
+        "width": 1276,
+        "height": 958
+      },
+      {
+        "src": "assets/work/gateway-components.webp",
+        "alt": "拆分展示的网关外壳与电路板",
+        "caption": "结构与板卡拆分",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/work/gateway-assembly.webp",
+        "alt": "网关内部板卡堆叠与支撑柱装配",
+        "caption": "装配结构",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 960,
+        "height": 1280
+      },
+      {
+        "src": "assets/work/gateway-open-board.webp",
+        "alt": "打开外壳的网关板卡、散热与连接线",
+        "caption": "开壳观察",
+        "layout": "photo",
+        "kind": "实物照片",
+        "width": 1200,
+        "height": 1600
+      },
+      {
+        "src": "assets/work/control-board.webp",
+        "alt": "工作归档中的控制板细节",
+        "caption": "板卡细节",
+        "layout": "photo",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
+  },
+  {
+    "title": "移动平台",
+    "media": [
+      {
+        "src": "assets/work/mobile-platform.webp",
+        "alt": "移动平台 · 整机",
+        "caption": "移动平台 · 整机",
+        "layout": "photo",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/work/mobile-platform-rear.webp",
+        "alt": "移动平台 · 背面模块",
+        "caption": "移动平台 · 背面模块",
+        "layout": "photo",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "src": "assets/work/mobile-platform-workbench.webp",
+        "alt": "工作台 · 接线与装配",
+        "caption": "工作台 · 接线与装配",
+        "layout": "photo",
+        "width": 1200,
+        "height": 1600
+      }
+    ]
   }
 ];

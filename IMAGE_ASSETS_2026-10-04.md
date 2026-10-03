@@ -50,3 +50,11 @@
 - `assets/work/mobile-platform-workbench.webp`：六方式 `微信图片_20260924224128_28_1885.jpg`。
 
 实拍只做EXIF方向校正、等比例缩小和WebP编码；未生成或替换照片主体。
+
+## 反馈追加的实物照片
+
+- gateway-ports.webp ← 微信图片_20260924223928_23_1885.jpg
+- control-board.webp ← 微信图片_20260924224129_29_1885.jpg
+- mobile-platform-rear.webp ← 微信图片_20260924224139_31_1885.jpg
+
+全部9张原始工作照片现在可从硬件案例查看；公开页面删除生成工具说明，来源记录在此文档保留。
