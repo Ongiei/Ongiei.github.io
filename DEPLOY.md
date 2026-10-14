@@ -12,7 +12,7 @@
 
 ```sh
 stage_dir=$(mktemp -d /tmp/ongiei-edgeone.XXXXXX)
-rsync -a --include='/*.html' --include='/*.css' --include='/*.js' --include='/assets/***' --include='/vendor/***' --exclude='*' ./ "$stage_dir/"
+rsync -a --include='/*.html' --include='/*.css' --include='/*.js' --include='/assets/***' --include='/vendor/***' --include='/spatial-storage/***' --exclude='*' ./ "$stage_dir/"
 npm exec --yes --package=edgeone -- edgeone makers deploy "$stage_dir" -n ongiei-portfolio -a overseas --skip-ai-gateway-sync --json
 ```
 
@@ -20,4 +20,24 @@ npm exec --yes --package=edgeone -- edgeone makers deploy "$stage_dir" -n ongiei
 
 ## 项目边界
 
-本站是纯静态网页；三个数据看板直接嵌入各自的案例页。Spatial Storage 在这里展示产品案例，其交互式应用是另一个仓库和部署目标。当前作品集不需要常驻服务器。
+本站是纯静态网页；三个数据看板直接嵌入各自的案例页。Spatial Storage 的交互应用发布在 `/spatial-storage/`，源码仍由独立项目维护；这里跟踪构建产物，使主站和 GitHub Pages 备用站均可访问。数据保存在访客当前浏览器，不需要常驻服务器。
+
+## 更新 Spatial Storage
+
+在独立源码目录运行类型检查、核心及 Web 测试，再按网站子路径构建：
+
+```sh
+cd '/Users/ongiei/Documents/New project/spatial-storage'
+pnpm typecheck
+pnpm test:core
+pnpm test:web
+pnpm --filter @spatial-storage/web exec vite build --base=/spatial-storage/ --outDir='/Users/ongiei/Documents/ChatGPT/作品集网站/output/spatial-deploy-check/site/spatial-storage' --emptyOutDir
+```
+
+确认浏览器中搜索、2D/3D 切换、手机布局及刷新正常后，在作品集目录同步产物，再按上面的完整站点清单发布：
+
+```sh
+rsync -a --delete output/spatial-deploy-check/site/spatial-storage/ spatial-storage/
+```
+
+`spatial-storage/` 只存放公开构建产物。发布时包含这个完整目录，不能只上传主站的顶层文件，否则在线体验入口会失效。源码中的 `public/textures/README.md` 随产物保留素材出处。

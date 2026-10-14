@@ -57,6 +57,8 @@
 .case-evidence{padding-bottom:28px;display:grid;grid-template-columns:minmax(180px,.6fr) minmax(0,1.4fr);gap:28px;align-items:start}
 .case-evidence strong{font-size:12px;line-height:1.65;color:var(--ink)}
 .case-evidence p{font-size:13px;line-height:1.8;color:var(--ink-soft);margin:0;max-width:70ch}
+.case-demo{margin-top:16px}
+.detail-actions{display:flex;flex-wrap:wrap;gap:12px 28px}
 .case-media{padding-top:36px;padding-bottom:75px;scroll-margin-top:30px}
 .case-media-head{border-top:1px solid var(--ink);padding-top:20px;margin-bottom:26px}
 .case-media-head h2,.work-records h2{font-family:var(--editorial-serif);font-weight:600;font-size:clamp(30px,3.5vw,48px);line-height:1.2;margin:0 0 16px}

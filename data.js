@@ -667,9 +667,10 @@ window.PORTFOLIO_PROJECTS = [
         "IndexedDB 持久化，JSON 导入与导出。"
       ]
     ],
-    "outcome": "本地 MVP：收纳管理、搜索定位、空间编辑、JSON 导入导出。",
-    "status": "本地 Web MVP · 2026.10 更新",
-    "evidenceNote": "本地 MVP · 家庭样例"
+    "outcome": "Web MVP：收纳管理、搜索定位、空间编辑、JSON 导入导出。",
+    "status": "在线 Web MVP · 2026.10 更新",
+    "evidenceNote": "可编辑的家庭样例。数据保存在当前浏览器，可通过 JSON 导入导出迁移。",
+    "demoUrl": "spatial-storage/"
   }
 ];
 

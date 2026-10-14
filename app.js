@@ -15,7 +15,8 @@ function galleryFigure(item) {
 }
 function evidenceNote(project) {
   if (!project.evidenceNote) return '';
-  return `<div class="case-evidence section-shell"><strong>${project.status}</strong><p>${project.evidenceNote}</p></div>`;
+  const demo = project.demoUrl ? `<a class="button button-primary case-demo" href="${project.demoUrl}" target="_blank" rel="noopener noreferrer" aria-label="在线体验（新标签页）">在线体验 <span aria-hidden="true">↗</span></a>` : '';
+  return `<div class="case-evidence section-shell"><strong>${project.status}</strong><div><p>${project.evidenceNote}</p>${demo}</div></div>`;
 }
 
 function projectVisual(project, compact = false) {
@@ -104,7 +105,7 @@ if (page === 'work') {
   let selectedSlug = new URLSearchParams(location.search).get('slug');
   const displayOrder = ['voice-touch-terminal', 'cm5-home-gateway', 'eye-care-dashboard', 'auto-backlight-dashboard', 'device-timeline', 'spatial-storage', 'dezhou-exhibition-center', 'zhengzhou-exhibition-center', 'longchang-civic-center'];
   const ordered = [...projects].sort((a, b) => displayOrder.indexOf(a.slug) - displayOrder.indexOf(b.slug));
-  const detailMarkup = project => `<div class="detail-top"><span>${project.index} / ${String(projects.length).padStart(2, '0')} · ${project.categoryLabel}</span><span>${project.period}</span></div><h2>${project.title}</h2><p class="detail-question">${project.question}</p><div class="detail-media category-${project.category}">${projectVisual(project, true)}</div><p class="detail-summary">${project.summary}</p><a class="detail-cta" href="project.html?slug=${project.slug}">阅读完整案例 <span aria-hidden="true">↗</span></a>`;
+  const detailMarkup = project => `<div class="detail-top"><span>${project.index} / ${String(projects.length).padStart(2, '0')} · ${project.categoryLabel}</span><span>${project.period}</span></div><h2>${project.title}</h2><p class="detail-question">${project.question}</p><div class="detail-media category-${project.category}">${projectVisual(project, true)}</div><p class="detail-summary">${project.summary}</p><div class="detail-actions"><a class="detail-cta" href="project.html?slug=${project.slug}">阅读完整案例 <span aria-hidden="true">↗</span></a>${project.demoUrl ? `<a class="detail-cta" href="${project.demoUrl}" target="_blank" rel="noopener noreferrer" aria-label="在线体验（新标签页）">在线体验 <span aria-hidden="true">↗</span></a>` : ''}</div>`;
   const select = slug => {
     const project = projects.find(item => item.slug === slug);
     if (!project) return;

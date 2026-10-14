@@ -19,6 +19,7 @@
 - `styles.css`、`editorial.css`、`portfolio-product.css`：基础样式、OpenDesign 聚合后的编辑式视觉系统与产品导向页面样式。
 - `spatial.js`、`vendor/three.min.js`：首页的可选三维空间场景，桌面端接近该区域时才加载；窄屏、减少动态效果偏好和 WebGL 不可用时使用真实项目图像。
 - `portfolio-charts.js`、`portfolio-charts.css`、`assets/lieflat/`：护眼、自动背光和设备行为时间轴的嵌入式看板。
+- `spatial-storage/`：独立项目的静态构建产物；案例页和作品索引提供在线体验入口，数据保存在访客浏览器。
 - `DESIGN.md`、`PRODUCT.md`：当前设计与产品约束。
 - `ARCHITECTURE_ASSET_REVIEW.md`、`DASHBOARD_LOGIC.md`：素材筛选和分析逻辑归档。
 
