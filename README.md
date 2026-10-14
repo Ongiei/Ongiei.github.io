@@ -18,6 +18,7 @@
 - `app.js`：内容渲染、筛选、索引选择与导航。
 - `styles.css`、`editorial.css`、`portfolio-product.css`：基础样式、OpenDesign 聚合后的编辑式视觉系统与产品导向页面样式。
 - `spatial.js`、`vendor/three.min.js`：首页的可选三维空间场景，桌面端接近该区域时才加载；窄屏、减少动态效果偏好和 WebGL 不可用时使用真实项目图像。
+- `scroll-ruler.js`、`scroll-ruler.css`：首页章节标尺与逐字标题停靠；手机及减少动态效果模式使用简洁进度线。章节字样采用略扁的黑体标记，与工程标尺保持一致。
 - `portfolio-charts.js`、`portfolio-charts.css`、`assets/lieflat/`：护眼、自动背光和设备行为时间轴的嵌入式看板。
 - `spatial-storage/`：独立项目的静态构建产物；案例页和作品索引提供在线体验入口，数据保存在访客浏览器。
 - `DESIGN.md`、`PRODUCT.md`：当前设计与产品约束。
