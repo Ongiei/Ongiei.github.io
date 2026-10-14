@@ -1,0 +1,3 @@
+# Preserve whitespace inside generated vendor JavaScript (including GLSL strings).
+spatial-storage/assets/*.js -whitespace linguist-generated=true
+spatial-storage/assets/*.css linguist-generated=true
